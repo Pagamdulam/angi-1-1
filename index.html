@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Хэрэглээний программ 1-1 · Эцэг эхийн булан</title>
+<meta name="description" content="ӨВПК Хэрэглээний программ 1-1 ангийн эцэг эх, асран хамгаалагчдад зориулсан мэдээллийн хуудас.">
+<meta name="theme-color" content="#1f3c88">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Хэрэглээний программ 1-1 · Эцэг эхийн булан">
+<meta property="og:description" content="Ангийн зар, хичээлийн хуваарь, хүүхдээ гэрээсээ хэрхэн дэмжих зөвлөгөө — ӨВПК">
+<meta property="og:image" content="https://pagamdulam.github.io/angi-1-1/og.png">
+<meta property="og:url" content="https://pagamdulam.github.io/angi-1-1/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💙</text></svg>">
+<style>
+:root{
+  --navy:#1f3c88;--blue:#2f5fd0;--sky:#eef3fd;--sky2:#dfe8fb;
+  --gold:#f4b740;--cream:#fff8ea;--ink:#1d2433;--mut:#667089;--line:#e3e8f2;
+  --bg:#f5f7fb;--r:16px;--sh:0 1px 2px rgba(29,36,51,.04),0 6px 20px rgba(29,36,51,.06)
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 18px}
+
+/* ---------- header ---------- */
+header{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+header:before{content:"";position:absolute;right:-90px;top:-110px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.06)}
+header:after{content:"";position:absolute;right:120px;bottom:-140px;width:220px;height:220px;border-radius:50%;background:rgba(244,183,64,.12)}
+.hd{position:relative;z-index:1;padding:26px 0 22px;display:flex;align-items:center;gap:18px}
+.logo{flex:0 0 58px;height:58px;border-radius:16px;background:#fff;color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;letter-spacing:-.5px}
+.hd small{display:block;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.hd h1{margin:2px 0 0;font-size:26px;line-height:1.2}
+.moto{margin-left:auto;background:var(--gold);color:#3b2a00;font-weight:800;font-size:14px;padding:7px 14px;border-radius:999px;white-space:nowrap}
+
+/* ---------- tabs ---------- */
+.tabs{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.tabs .wrap{display:flex;gap:4px}
+.tab{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:14px 6px;font-weight:600;font-size:15px;color:var(--mut);border-bottom:3px solid transparent;cursor:pointer;background:none;border-top:0;border-left:0;border-right:0;font-family:inherit}
+.tab:hover{color:var(--navy)}
+.tab.on{color:var(--navy);border-bottom-color:var(--gold)}
+.tab i{font-style:normal;font-size:18px}
+
+/* ---------- layout ---------- */
+main.wrap{padding:28px 18px 40px}
+.page{display:none;animation:fade .25s ease}
+.page.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.sec{margin-bottom:30px}
+.sec>h2{font-size:20px;margin:0 0 4px}
+.sec>.sub{color:var(--mut);margin:0 0 14px;font-size:15px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--sh)}
+.card h3{margin:0 0 6px;font-size:16.5px}
+.card p{margin:0;color:#3a445c}
+.muted{color:var(--mut);font-size:14px}
+
+/* intro */
+.intro{display:grid;grid-template-columns:1.6fr 1fr;gap:14px}
+.intro .card:first-child p+p{margin-top:10px}
+.lead{font-size:17px;line-height:1.65}
+.stat{background:var(--sky);border:0;box-shadow:none;text-align:center;padding:16px 10px}
+.stat b{display:block;font-size:26px;color:var(--navy);line-height:1.1}
+.stat span{font-size:13.5px;color:var(--mut)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+/* announcements */
+.ann{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.ann:last-child{border-bottom:0;padding-bottom:0}.ann:first-child{padding-top:0}
+.dt{flex:0 0 56px;height:56px;border-radius:14px;background:var(--sky);color:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.dt b{font-size:20px}.dt small{font-size:11px;margin-top:3px;color:var(--mut)}
+.ann.hot .dt{background:#fdecea;color:#b4372d}.ann.hol .dt{background:var(--cream);color:#8a5a00}
+.ann h3{margin:0 0 2px;font-size:15.5px}.ann p{margin:0;font-size:14.5px;color:#3a445c}
+.pill{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--sky2);color:var(--navy);margin-left:6px;vertical-align:2px}
+
+/* upcoming */
+.up{list-style:none;margin:0;padding:0}
+.up li{display:flex;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.up li:last-child{border-bottom:0}
+.up b{flex:0 0 74px;color:var(--navy);font-size:14px}
+.up li.past{opacity:.5}
+
+/* quick links */
+.ql{display:flex;gap:14px;align-items:center;padding:16px 18px;color:inherit}
+.ql:hover{text-decoration:none;border-color:var(--sky2);transform:translateY(-1px)}
+.ql .ic{flex:0 0 44px;height:44px;border-radius:12px;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:22px}
+.ql b{display:block;font-size:15.5px;color:var(--ink)}.ql b+span{display:block;font-size:13.5px;color:var(--mut)}
+.card{transition:transform .15s,border-color .15s}
+
+/* timetable */
+.tt{width:100%;border-collapse:separate;border-spacing:0;font-size:14px}
+.tt th{background:var(--navy);color:#fff;font-weight:600;padding:10px;text-align:left}
+.tt th:first-child{border-radius:10px 0 0 0}.tt th:last-child{border-radius:0 10px 0 0}
+.tt td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tt td small{display:block;color:var(--mut);font-size:12px;margin-top:2px}
+.tt td:first-child{white-space:nowrap;font-weight:700;color:var(--navy);background:#fafbfe}
+.tt .m{background:var(--cream)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scroll .tt{min-width:660px}
+.ex{display:flex;gap:12px;align-items:flex-start}
+.ex .d{flex:0 0 64px;font-weight:800;color:var(--navy);font-size:14px}
+.ex b{display:block;font-size:15px}.ex small{color:var(--mut);font-size:13px}
+
+/* program */
+.bar{display:flex;height:14px;border-radius:999px;overflow:hidden;margin:12px 0 10px}
+.leg{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13.5px;color:#3a445c}
+.leg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px}
+details.yr{background:#fff;border:1px solid var(--line);border-radius:var(--r);margin-bottom:10px;box-shadow:var(--sh);overflow:hidden}
+details.yr summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;align-items:center;gap:12px;font-weight:700}
+details.yr summary::-webkit-details-marker{display:none}
+details.yr summary .n{flex:0 0 38px;height:38px;border-radius:12px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px}
+details.yr summary small{font-weight:500;color:var(--mut);margin-left:auto}
+details.yr summary:after{content:"▾";color:var(--mut);transition:transform .2s}
+details.yr[open] summary:after{transform:rotate(180deg)}
+.yb{padding:0 20px 18px 70px;display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;font-size:14.5px;color:#3a445c}
+.yb h4{margin:6px 0 2px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.yb ul{margin:0;padding-left:18px}
+
+/* roles */
+.role{display:flex;gap:14px}
+.av{flex:0 0 48px;height:48px;border-radius:50%;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:22px}
+.role .t{font-size:13px;color:var(--mut);font-weight:600}
+.role .nm{font-size:17px;font-weight:800;color:var(--navy);line-height:1.3}
+.role .hp{font-size:13px;color:#3a445c;margin-bottom:4px}
+.role p{font-size:14px}
+
+/* rules */
+.rules{counter-reset:r;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.rule{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.rule:before{counter-increment:r;content:counter(r);flex:0 0 30px;height:30px;border-radius:50%;background:var(--gold);color:#3b2a00;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
+.rule b{display:block;font-size:15px}.rule span{font-size:13.5px;color:var(--mut)}
+
+/* steps */
+.steps{counter-reset:s;display:grid;gap:10px}
+.step{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.step:before{counter-increment:s;content:counter(s);flex:0 0 34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.step h3{margin:0 0 3px;font-size:16px}.step p{margin:0;color:#3a445c;font-size:15px}
+.tip{background:var(--cream);border:1px solid #f3dfb2;border-radius:var(--r);padding:16px 18px}
+.tip b{color:#7a5100}.tip ul{margin:6px 0 0;padding-left:20px}
+.note{background:var(--sky);border-radius:12px;padding:12px 16px;font-size:14.5px;color:#2b3550;margin-top:14px}
+
+/* faq */
+details.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:8px}
+details.q summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary:after{content:"+";color:var(--blue);font-size:20px;line-height:1}
+details.q[open] summary:after{content:"–"}
+details.q p{margin:8px 0 0;color:#3a445c;font-size:15px}
+
+/* contact */
+.contact{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}
+.contact .ph{width:84px;height:84px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;padding:11px 18px;border-radius:12px;background:var(--navy);color:#fff}
+.btn:hover{text-decoration:none;filter:brightness(1.1)}
+.btn.alt{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+
+#days{display:none}
+.dsel{display:flex;gap:6px;margin-bottom:10px}
+.dsel button{flex:1;border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 0;font:600 14px inherit;font-family:inherit;color:var(--mut)}
+.dsel button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.lsn{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.lsn:last-child{border-bottom:0}
+.lsn .pr{flex:0 0 92px;font-weight:800;color:var(--navy);font-size:14px;line-height:1.3}.lsn .pr small{display:block;font-weight:500;color:var(--mut);font-size:12px}
+.lsn.m{background:var(--cream);margin:0 -20px;padding:12px 20px}
+.lsn small{display:block;color:var(--mut);font-size:12.5px}.lsn .pr small{white-space:nowrap}
+@media (max-width:720px){#ttWrap{display:none}#days{display:block}.hd small{font-size:10.5px;letter-spacing:.08em}}
+.schol{display:grid;grid-template-columns:240px 1fr;gap:20px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--sh)}
+.schol .big{background:linear-gradient(135deg,var(--navy),#3d63c9);color:#fff;border-radius:14px;padding:20px;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.schol .big small{opacity:.85;font-size:13px}.schol .big b{font-size:32px;line-height:1.2;margin:6px 0;color:var(--gold)}.schol .big span{font-size:13.5px;opacity:.9}
+.schol ul{margin:0;padding-left:20px;color:#3a445c}.schol li{margin-bottom:6px}
+.college{display:flex;flex-wrap:wrap;gap:14px 30px;align-items:center;justify-content:space-between}
+.college b{display:block;font-size:16px}.college span{color:var(--mut);font-size:14px}
+.cl{display:flex;flex-wrap:wrap;gap:8px}.cl a{background:var(--sky);padding:7px 12px;border-radius:10px;font-size:14px;font-weight:600;color:var(--navy)}
+@media (max-width:720px){.schol{grid-template-columns:1fr}}
+#cholqo{scroll-margin-top:70px}
+footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--mut);font-size:13.5px;text-align:center}
+
+/* ---------- mobile ---------- */
+@media (max-width:720px){
+  .hd{padding:20px 0 18px;gap:14px}.logo{flex-basis:48px;height:48px;font-size:17px;border-radius:14px}
+  .hd h1{font-size:21px}.moto{display:none}
+  .tabs{position:fixed;top:auto;bottom:0;left:0;right:0;border-top:1px solid var(--line);border-bottom:0;padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -4px 16px rgba(29,36,51,.06)}
+  .tabs .wrap{padding:0 4px}
+  .tab{flex-direction:column;gap:2px;font-size:11.5px;padding:8px 2px 9px;border-bottom:0;border-top:3px solid transparent}
+  .tab.on{border-top-color:var(--gold)}
+  main.wrap{padding:20px 16px 96px}
+  .intro{grid-template-columns:1fr}
+  .yb{grid-template-columns:1fr;padding-left:20px}
+  .contact{grid-template-columns:1fr;text-align:center}.contact .ph{margin:0 auto}.btns{justify-content:center}
+  footer{padding-bottom:100px}
+}
+@media print{.tabs{display:none}.page{display:block!important}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap hd">
+  <div class="logo">1-1</div>
+  <div>
+    <small>ӨВПК · Эцэг эх, асран хамгаалагчийн булан</small>
+    <h1>Хэрэглээний программ 1-1</h1>
+  </div>
+  <div class="moto">Би биш — бид 💙</div>
+</div></header>
+
+<nav class="tabs"><div class="wrap">
+  <button class="tab" data-p="nuur"><i>🏠</i>Нүүр</button>
+  <button class="tab" data-p="surlaga"><i>📚</i>Сурлага</button>
+  <button class="tab" data-p="angi"><i>👥</i>Анги</button>
+  <button class="tab" data-p="etseg"><i>💡</i>Эцэг эхэд</button>
+  <button class="tab" data-p="holboo"><i>📞</i>Холбоо</button>
+</div></nav>
+
+<main class="wrap">
+
+<!-- ================= НҮҮР ================= -->
+<section class="page" id="p-nuur">
+  <div class="sec intro">
+    <div class="card">
+      <p class="lead">Бид Өвөрхангай аймаг дахь Политехник коллежийн <b>«Хэрэглээний программ»</b> мэргэжлийн 1-р курсийн суралцагчид. Компьютерын хэрэглээний программ, программчлал, хиймэл оюун ухааныг ашиглаж сурахын зэрэгцээ ерөнхий боловсролын хичээлүүдээ судалж байна.</p>
+      <p class="muted"><b>«Би биш — бид»</b> бол манай ангийн уриа. Бид бие биедээ тусалж, хамтдаа суралцаж, хамтдаа өсөж хөгжинө. 2026 оны 11 сараас эхлэн хичээл, даалгавраа <b>Microsoft Teams</b>-ээр цахимаар хийж байна.</p>
+    </div>
+    <div class="stats">
+      <div class="card stat"><b>19</b><span>суралцагч</span></div>
+      <div class="card stat"><b>3 жил</b><span>суралцах хугацаа</span></div>
+      <div class="card stat"><b>70%</b><span>нь дадлага</span></div>
+      <div class="card stat"><b>IV</b><span>мэргэшлийн түвшин</span></div>
+    </div>
+  </div>
+
+  <div class="sec grid g2">
+    <div class="card">
+      <h3>📢 Зарын самбар</h3>
+      <div id="annList" style="margin-top:10px"></div>
+    </div>
+    <div class="card">
+      <h3>📅 Удахгүй болох</h3>
+      <ul class="up" id="upNext" style="margin-top:6px"></ul>
+      <p style="margin-top:10px;font-size:14px"><a href="#holboo" data-go="holboo">Бүх чухал өдрийг харах →</a></p>
+    </div>
+  </div>
+
+  <div class="sec grid g3">
+    <a class="card ql" href="#surlaga" data-go="surlaga"><span class="ic">🗓️</span><span><b>Хичээлийн хуваарь</b><span>Өдөр бүрийн хичээл, давтлагын цаг</span></span></a>
+    <a class="card ql" href="https://pagamdulam.github.io/math10/" target="_blank" rel="noopener"><span class="ic">📐</span><span><b>Математик X</b><span>Видео хичээл, дасгал, бие даан суралцах</span></span></a>
+    <a class="card ql" href="#etseg" data-go="etseg"><span class="ic">🎓</span><span><b>Тэтгэлэг ба зөвлөгөө</b><span>Төгсөхөд 6 сая ₮, гэрээсээ дэмжих 5 зөвлөгөө</span></span></a>
+  </div>
+</section>
+
+<!-- ================= СУРЛАГА ================= -->
+<section class="page" id="p-surlaga">
+  <div class="sec">
+    <h2>Хичээлийн хуваарь</h2>
+    <p class="sub">I байр. «/» тэмдэгтэй цагт хоёр хичээл долоо хоног алгасан ээлжилнэ. Математикийн цагийг шараар тэмдэглэсэн.</p>
+    <div class="card scroll" id="ttWrap" style="padding:0">
+      <table class="tt">
+        <tr><th>Пар</th><th>Даваа</th><th>Мягмар</th><th>Лхагва</th><th>Пүрэв</th><th>Баасан</th></tr>
+        <tr><td>I<small>08:00–09:20</small></td><td>Иргэний ёс зүйн боловсрол<small>Т.Чулуунцэцэг</small></td><td>Компьютерын хэрэглээний программууд<small>С.Баасансүрэн</small></td><td>Солонгос хэл (сонгох)<small>Б.Янжинлхам</small></td><td>Физик<small>Г.Оюун-Эрдэнэ</small></td><td>Механик ба электроникийн үндэс<small>Л.Долгоржав</small></td></tr>
+        <tr><td>II<small>09:25–10:45</small></td><td class="m">Математик<small>Т.Пагамдулам</small></td><td>Биеийн тамир<small>П.Содномцоо</small></td><td class="m">Математик / Бичилтийн техник<small>Т.Пагамдулам / Ч.Мөнхбаяр</small></td><td>Газарзүй<small>М.Гэндэнсүрэн</small></td><td>Мэдээллийн технологи / Механик ба электроник<small>Т.Цэрэнбал / Л.Долгоржав</small></td></tr>
+        <tr><td>III<small>10:50–12:10</small></td><td>Эрүүл мэнд<small>П.Содномцоо</small></td><td>Үндэсний бичиг<small>А.Бадамханд</small></td><td>Бичилтийн техник<small>Ч.Мөнхбаяр</small></td><td>Хими / Англи хэл<small>А.Отгонцэцэг / С.Болорзэс</small></td><td>Монгол хэл<small>А.Бадамханд</small></td></tr>
+        <tr><td>IV<small>12:15–13:35</small></td><td>Цахим орчинд ажиллах<small>Б.Дуламсүрэн</small></td><td>Биологи<small>О.Бунд</small></td><td>Англи хэл<small>С.Болорзэс</small></td><td>Нийгэм судлал / Монголын түүх<small>Д.Мөнхцэцэг / Г.Дуламсүрэн</small></td><td>ХАБЭА-н шаардлага хангаж ажиллах<small>Г.Бямбасүрэн</small></td></tr>
+      </table>
+    </div>
+    <div id="days"></div>
+  </div>
+
+  <div class="sec">
+    <h2>Хичээлээс гадуурх үйл ажиллагаа</h2>
+    <p class="sub">227 тоот. Хүүхдээ идэвхтэй оролцохыг дэмжээрэй.</p>
+    <div class="grid g2">
+      <div class="card ex"><span class="d">Даваа</span><span><b>Математикийн давтлага</b><small>15:25–18:10 · Багш Т.Пагамдулам</small></span></div>
+      <div class="card ex"><span class="d">Мягмар</span><span><b>Ном унших цаг</b><small>15:00–17:00 · Номын санч Н.Дуламханд</small></span></div>
+      <div class="card ex"><span class="d">Лхагва</span><span><b>Англи хэлний ярианы клуб</b><small>14:00–15:20 · Багш С.Болорзэс</small></span></div>
+      <div class="card ex"><span class="d">Пүрэв</span><span><b>IT клуб</b><small>15:25–18:10 · Багш Т.Пагамдулам</small></span></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Математик</h2>
+    <p class="sub">1-р курст 108 цаг (54 хичээл). 10-р ангийн агуулгыг бүрэн хамрахын зэрэгцээ өмнөх ангиудын хоцрогдлыг нөхөнө.</p>
+    <div class="grid g3">
+      <div class="card"><h3>🗓️ Хэзээ орох вэ?</h3><p>Даваа 09:25 гарагт хичээл, Лхагва гарагт долоо хоног алгасан хичээл, Даваа 15:25–18:10 цагт давтлага. Давтлагад шинэ сэдэв орохгүй, бататгал хийнэ.</p></div>
+      <div class="card"><h3>🤝 Хамтдаа суралцацгаая</h3><p>Хичээлийн эхний 30 минутад хүүхдүүд 3–4 хүний багаар ээлжилж, сурсан сэдвээ ангийнхандаа <b>өөрсдөө заадаг</b>.</p></div>
+      <div class="card"><h3>🎯 Үнэлгээ</h3><p>Сэдэв бүрийн дараа богино сорил, улирлын төгсгөлд шалгалт. Алдсан бодлогоо давтлагаар ганцаарчлан засна.</p></div>
+    </div>
+    <p class="note">📐 Видео хичээл, дасгалыг <a href="https://pagamdulam.github.io/math10/" target="_blank" rel="noopener">Математик X</a> сайтаас гэрээсээ үзэж болно.</p>
+  </div>
+
+  <div class="sec">
+    <h2>Сургалтын хөтөлбөр</h2>
+    <p class="sub">«Хэрэглээний программ» · индекс 061101 · 3 жил · 95 багц цаг (4248 цаг). Бүрэн дунд боловсрол болон мэргэжлийг зэрэг эзэмшинэ.</p>
+    <div class="card" style="margin-bottom:12px">
+      <h3>Цагийн хуваарилалт</h3>
+      <div class="bar">
+        <div style="flex:1638;background:#9db7ec"></div><div style="flex:774;background:var(--navy)"></div><div style="flex:756;background:var(--gold)"></div><div style="flex:1080;background:#2a9d6a"></div>
+      </div>
+      <div class="leg">
+        <span><i style="background:#9db7ec"></i>Бүрэн дунд боловсрол · 1638 ц</span>
+        <span><i style="background:var(--navy)"></i>Мэргэжлийн онол · 774 ц</span>
+        <span><i style="background:var(--gold)"></i>Сургууль дээрх дадлага · 756 ц</span>
+        <span><i style="background:#2a9d6a"></i>Үйлдвэрлэлийн дадлага · 1080 ц</span>
+      </div>
+    </div>
+    <details class="yr" open><summary><span class="n">1</span>1-р курс<small>I–II улирал</small></summary>
+      <div class="yb">
+        <div><h4>Мэргэжил</h4><ul><li>Компьютерын хэрэглээний программууд</li><li>Цахим орчинд ажиллах</li><li>Бичилтийн техник</li><li>Механик ба электроникийн үндэс</li><li>Компьютерын систем, техник хангамж</li><li>Программчлалын үндэс</li><li>ХАБЭА</li></ul></div>
+        <div><h4>Ерөнхий боловсрол</h4><p>Монгол хэл, үндэсний бичиг, математик, нийгэм, түүх, газарзүй, биологи, физик, хими, англи хэл, биеийн тамир, иргэний ёс зүй, мэдээллийн технологи, эрүүл мэнд</p><h4>Сонгох</h4><p>Соёл урлаг эсвэл Амьдрах ухааны ур чадвар</p></div>
+      </div>
+    </details>
+    <details class="yr"><summary><span class="n">2</span>2-р курс<small>III–IV улирал</small></summary>
+      <div class="yb">
+        <div><h4>Мэргэжил</h4><ul><li>Компьютерын хэрэглээний программууд</li><li>Механик ба электроникийн үндэс</li><li>Компьютерын систем, техник хангамж</li><li>Хиймэл оюун (AI) ашиглах</li><li>2D график, Мультимедиа</li><li>Программчлалын үндэс</li><li>Энтрепренершип, Гамшгаас хамгаалах</li></ul></div>
+        <div><h4>Ерөнхий боловсрол</h4><p>Монгол хэл, үндэсний бичиг, математик, нийгэм, газарзүй, биологи, физик, хими, англи хэл, биеийн тамир, мэдээллийн технологи</p><h4>Сонгох</h4><p>Алгоритмын үндэс эсвэл Солонгос хэл</p></div>
+      </div>
+    </details>
+    <details class="yr"><summary><span class="n">3</span>3-р курс<small>V–VI улирал</small></summary>
+      <div class="yb">
+        <div><h4>Мэргэжил</h4><ul><li>Вэб сайт хөгжүүлэх</li><li>2D график, Мультимедиа</li><li>Хиймэл оюун (AI) ашиглах</li><li>Программчлалын үндэс</li><li>Мэргэжлийн англи хэл</li><li>Хөдөлмөрт бэлтгэх</li></ul></div>
+        <div><h4>Ерөнхий боловсрол</h4><p>Монгол хэл, уран зохиол, математик, англи хэл</p><h4>Сонгох</h4><p>Мобайл технологи эсвэл Python хэл</p><h4>Дадлага</h4><p>Байгууллагад үйлдвэрлэлийн дадлага хийнэ.</p></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ================= АНГИ ================= -->
+<section class="page" id="p-angi">
+  <div class="sec">
+    <h2>Ангийн үүрэгт суралцагчид</h2>
+    <p class="sub">Санал асуулга, судалгааны үр дүнгээр сонгогдсон манай идэвхтнүүд. Хичээлийн жилийн турш ажиллаж, I улирлын төгсгөлд ажлаа дүгнүүлнэ.</p>
+    <div class="grid g2" id="roleList"></div>
+  </div>
+
+  <div class="sec">
+    <h2>Ангийн дүрэм</h2>
+    <p class="sub">Бид хамтдаа тохиролцсон.</p>
+    <div class="rules">
+      <div class="rule"><span><b>Цагтаа ирнэ</b><span>Хичээл эхлэхээс өмнө ангидаа байна.</span></span></div>
+      <div class="rule"><span><b>Бие биеэ хүндэтгэнэ</b><span>Эелдэг харьцаж, бусдыгаа сонсоно.</span></span></div>
+      <div class="rule"><span><b>Даалгавраа хийнэ</b><span>Хугацаандаа Teams-ээр илгээнэ.</span></span></div>
+      <div class="rule"><span><b>Утсаа зөв ашиглана</b><span>Хичээлийн үеэр багшийн зөвшөөрлөөр.</span></span></div>
+      <div class="rule"><span><b>Ангиа цэвэр байлгана</b><span>Жижүүр, их цэвэрлэгээндээ оролцоно.</span></span></div>
+      <div class="rule"><span><b>Тоног төхөөрөмжөө хайрлана</b><span>Компьютерыг болгоомжтой ашиглана.</span></span></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Ангийн цэвэрлэгээ</h2>
+    <p class="sub">Манай анги 303 (онолын анги), 227 (дадлагын газар) гэсэн хоёр өрөөг хариуцдаг.</p>
+    <div class="grid g2">
+      <div class="card"><h3>🧹 Өдрийн жижүүр</h3><p>Даваагаас Пүрэв хүртэл өрөө бүрт 2 хүүхэд ээлжилнэ. Жижүүрийн өдөр хүүхэд тань хичээл тараад 20–30 минут хоцорч ирж болно.</p></div>
+      <div class="card"><h3>✨ Баасан гарагийн их цэвэрлэгээ</h3><p>Хүүхэд бүр 14 хоногт 1 удаа оролцож, өрөө болон үүргээ ээлжилнэ. Ариун цэврийн хариуцагч шалгаж тэмдэглэнэ.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ЭЦЭГ ЭХЭД ================= -->
+<section class="page" id="p-etseg">
+  <div class="sec">
+    <h2>Тэтгэлэг ба дэмжлэг</h2>
+    <p class="sub">Мэргэжлийн болон техникийн боловсролын суралцагчдад төрөөс үзүүлэх дэмжлэг.</p>
+    <div class="schol">
+      <div class="big"><small>3 жилийн сургалт төгсөхөд</small><b>6,000,000₮</b><span>төрөөс нэг удаа олгох тэтгэлэг</span></div>
+      <div>
+        <ul>
+          <li>Суралцагч сургалтаа <b>амжилттай дуусгаж төгсөх үед</b> тэтгэлгийг нэг удаа олгоно. Сургалтын хугацаанаас хамааран <b>2, 3, 6 сая төгрөг</b> байна.</li>
+          <li>Манай анги <b>3 жилийн</b> сургалттай тул төгсөхдөө 6 сая төгрөгийн тэтгэлэг авна.</li>
+          <li>Хөдөө орон нутгийн суралцагчид <b>дотуур байр, халуун хоолоор үнэ төлбөргүй</b> хангагдана.</li>
+        </ul>
+        <p style="margin-top:10px">💡 Тэтгэлэг авах гол нөхцөл бол хичээлээ тасалдуулахгүй, <b>3 жилийн сургалтаа бүрэн дуусгах</b> явдал юм. Хүүхдээ эцэс хүртэл суралцахад нь дэмжээрэй.</p>
+        <div class="btns" style="margin-top:12px">
+          <a class="btn" href="https://legalinfo.mn/mn/detail?lawId=16960661169331&showType=1" target="_blank" rel="noopener">📄 Тэтгэлэг олгох журам</a>
+        </div>
+        <p class="muted" style="margin-top:8px">Журмын нарийн нөхцөлийг legalinfo.mn-ээс уншина уу. Тодорхой асуудлаар коллежийн сургалтын албанаас лавлаарай.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Коллежийн хэрэгтэй мэдээлэл</h2>
+    <p class="sub">Коллежийн албан ёсны сайт uvcollege.edu.mn-ээс.</p>
+    <div class="grid g3">
+      <a class="card ql" href="https://online.fliphtml5.com/pagam5511/prrq/" target="_blank" rel="noopener"><span class="ic">📘</span><span><b>Суралцагчийн гарын авлага</b><span>Суралцагчийн эрх, үүрэг, журмууд</span></span></a>
+      <a class="card ql" href="https://uvcollege.edu.mn/menu/durem-juram-2" target="_blank" rel="noopener"><span class="ic">📜</span><span><b>Дүрэм, журам</b><span>Коллежийн дүрэм, дотоод журмууд</span></span></a>
+      <a class="card ql" href="https://uvcollege.edu.mn/menu/dotuur-bair" target="_blank" rel="noopener"><span class="ic">🏠</span><span><b>Дотуур байр</b><span>Байрны мэдээлэл</span></span></a>
+      <a class="card ql" href="https://uvcollege.edu.mn/menu/klub-duguilan" target="_blank" rel="noopener"><span class="ic">🎨</span><span><b>Клуб, дугуйлан</b><span>Хичээлээс гадуурх хөгжил</span></span></a>
+      <a class="card ql" href="https://lib4u.online/?lib=uvpc" target="_blank" rel="noopener"><span class="ic">📚</span><span><b>Номын сангийн каталог</b><span>Цахим каталогоос ном хайх</span></span></a>
+      <a class="card ql" href="https://www.facebook.com/uvcollege" target="_blank" rel="noopener"><span class="ic">📣</span><span><b>Коллежийн Facebook</b><span>Сургуулийн мэдээ, зар</span></span></a>
+    </div>
+  </div>
+  <div class="sec">
+    <h2>Хүүхдээ гэрээсээ хэрхэн дэмжих вэ?</h2>
+    <p class="sub">Математик мэдэх шаардлагагүй. Таны анхаарал л хамгийн том дэмжлэг.</p>
+    <div class="steps">
+      <div class="step"><div><h3>Өдөр бүр 5 минут асуу</h3><p>«Өнөөдөр Teams-д юу хийсэн бэ? Ямар даалгавар байна?» Хүүхэд өөрөө тайлбарлах тусам илүү сайн ойлгодог.</p></div></div>
+      <div class="step"><div><h3>Тогтмол цаг, тайван орчин</h3><p>Өдөр бүр 30–60 минутыг хичээлд зориулахад нь тусална уу. Энэ үед утас, зурагтаас хол байлгаарай.</p></div></div>
+      <div class="step"><div><h3>Математик X-ийг хамтдаа үз</h3><p>Хичээл бүрийн видео, дасгал нэг дор бий. Ойлгоогүй хичээлээ дахин үзэж болно. <a href="https://pagamdulam.github.io/math10/" target="_blank" rel="noopener">Сайт руу орох →</a></p></div></div>
+      <div class="step"><div><h3>Хичээж байгааг нь магт</h3><p>Зөвхөн дүнг нь биш, хүчин чармайлтыг нь магтаарай. Алдах нь суралцахын нэг хэсэг.</p></div></div>
+      <div class="step"><div><h3>Багштай холбоотой бай</h3><p>Хүүхдийн тань зан байдал, нойр, хоолны дуршилд өөрчлөлт гарвал багшид хувиар хэлээрэй. Хамтдаа шийдье.</p></div></div>
+    </div>
+  </div>
+
+  <div class="sec grid g2">
+    <div class="tip">
+      <b>💬 Хүүхэдтэйгээ ярихдаа асууж болох асуултууд</b>
+      <ul><li>«Өнөөдөр хамгийн сонирхолтой нь юу байсан бэ?»</li><li>«Ямар бодлого хэцүү байсан бэ? Надад тайлбарлаад өгөөч.»</li><li>«Чамд юугаар туслах вэ?»</li></ul>
+    </div>
+    <div class="card">
+      <h3>💻 Microsoft Teams гэж юу вэ?</h3>
+      <p>Хүүхэд бүр <b>@uvcollege.edu.mn</b> хаягтай. Даалгавар, видео хичээл, ангийн зар бүгд Teams-ээр явагдана. Утсанд Play Store / App Store-оос үнэгүй суулгана. Хүүхдээсээ «Teams-ээ үзүүлээч» гэж хүсээрэй.</p>
+    </div>
+  </div>
+  <p class="note">📐 <b>Математикийн даалгавар бага зэрэг их санагдаж магадгүй.</b> Энэ нь суурь мэдлэгийг нь бэхжүүлж, программчлал, мэргэжлийн хичээлд нь шууд хэрэг болно. Хүүхдээ тууштай байхад нь дэмжээрэй 🙏</p>
+
+  <div class="sec" style="margin-top:30px">
+    <h2>Түгээмэл асуулт</h2>
+    <details class="q"><summary>Хүүхэд маань өвдвөл яаж чөлөө авах вэ?</summary><p>Өглөө 08:00-аас өмнө анги даасан багшид (9199-6648) утсаар эсвэл мессежээр мэдэгдээрэй. Хэд хоног өвдвөл эмчийн тодорхойлолт авчирна. Дэлгэрэнгүйг «Холбоо» хэсгийн «Чөлөө авах журам»-аас харна уу.</p></details>
+    <details class="q"><summary>Хүүхэд маань хичээл тасалсан бол яах вэ?</summary><p>Багшид өглөө нь мэдэгдээрэй. Тухайн өдрийн материал Teams болон Математик X сайтад байгаа тул гэрээсээ нөхөж үзэж болно.</p></details>
+    <details class="q"><summary>Хүүхдийнхээ дүнг хаанаас харах вэ?</summary><p>Хүүхдийн Teams-ийн «Grades (Дүн)» хэсэгт харагдана. Хүүхэдтэйгээ хамт нээж хараарай. Дэлгэрэнгүйг багшаас хувиар асууж болно.</p></details>
+    <details class="q"><summary>Математик хэцүү байна гэвэл яах вэ?</summary><p>Даваа гарагт 15:25–18:10 цагт математикийн давтлага ордог. Хүүхдээ оролцохыг уриалаарай. Математик X сайтын «Суурь» хэсэг өмнөх ангийн мэдлэгийг нь нөхөхөд тусална.</p></details>
+    <details class="q"><summary>Гэртээ компьютергүй бол яах вэ?</summary><p>Teams болон Математик X сайт гар утсан дээр ажилладаг. Шаардлагатай бол дадлагын газарт багшийн зөвшөөрлөөр ажиллаж болно.</p></details>
+    <details class="q"><summary>Хурал хэзээ болох вэ?</summary><p>Хурлын товыг энэ хуудасны зарын самбар болон эцэг эхийн групп чатад урьдчилан мэдэгдэнэ.</p></details>
+  </div>
+</section>
+
+<!-- ================= ХОЛБОО ================= -->
+<section class="page" id="p-holboo">
+  <div class="sec card contact">
+    <div class="ph">ТП</div>
+    <div>
+      <h3 style="font-size:19px;margin:0">Т.Пагамдулам</h3>
+      <p class="muted" style="margin:2px 0 8px">Анги даасан багш · Математик, мэдээллийн технологийн багш</p>
+      <p>Хүүхдийнхээ сурлага, ирц болон бусад асуудлаар <b>хувиар</b> холбогдоорой. Ажлын өдөр 08:00–18:00 цагийн хооронд хариулна.</p>
+      <p style="margin-top:8px;font-size:15px">📞 <a href="tel:91996648"><b>9199-6648</b></a> &nbsp;·&nbsp; ✉️ <a href="mailto:pagamdulamt@gmail.com">pagamdulamt@gmail.com</a></p>
+      <div class="btns">
+        <a class="btn" href="mailto:pagamdulamt@gmail.com">✉️ Имэйл</a>
+        <a class="btn alt" id="msgBtn" href="#">💬 Messenger</a>
+        <a class="btn alt" id="telBtn" href="#">📞 Залгах</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec grid g3">
+    <div class="card"><h3>📝 Чөлөө авах</h3><p>Хүүхэд өвдсөн эсвэл чөлөө авах шаардлагатай бол <b>өглөө 08:00-аас өмнө</b> багшид мэдэгдээрэй. <a href="#cholqo">Дэлгэрэнгүй журам →</a></p></div>
+    <div class="card"><h3>🤝 Ганцаарчлан уулзах</h3><p>Хүүхдийнхээ талаар биечлэн ярилцах бол урьдчилан утсаар цаг товлоорой. Уулзалтыг коллежийн I байрны 227 тоотод хийнэ.</p></div>
+    <div class="card"><h3>⏱️ Хариу өгөх хугацаа</h3><p>Мессежид <b>24 цагийн дотор</b> хариулна. Амралтын өдөр зөвхөн яаралтай асуудлаар холбогдоно уу.</p></div>
+  </div>
+
+  <div class="sec" id="cholqo">
+    <h2>Чөлөө авах журам</h2>
+    <p class="sub">Хүүхэд хичээлээ тасалбал багш, эцэг эх хоёр заавал мэдэж байх ёстой. Энэ нь хүүхдийн аюулгүй байдал, сурлагад чухал.</p>
+    <div class="steps">
+      <div class="step"><div><h3>Өвдсөн үед</h3><p>Өглөө <b>08:00-аас өмнө</b> анги даасан багшид утсаар эсвэл мессежээр мэдэгдэнэ. Хэд хоног өвдвөл хичээлдээ ирэхдээ <b>эмчийн тодорхойлолт</b> авчирна.</p></div></div>
+      <div class="step"><div><h3>Гэр бүлийн шалтгаантай чөлөө</h3><p>Урьдчилан мэдэгдэх боломжтой чөлөөг (гэр бүлийн арга хэмжээ, эмнэлгийн үзлэг, бичиг баримтын ажил) <b>эцэг эх, асран хамгаалагч өөрөө</b> багшид өмнөх өдөр нь хүсэлтээр мэдэгдэнэ.</p></div></div>
+      <div class="step"><div><h3>Хичээлийн дундуур гарах</h3><p>Хүүхэд хичээлийн дундуур сургуулиас гарах бол заавал <b>багшийн зөвшөөрөл</b> авна. Зөвшөөрөлгүй гарахыг тасалсанд тооцно.</p></div></div>
+      <div class="step"><div><h3>Тасалсан хичээлээ нөхөх</h3><p>Чөлөөтэй байсан өдрийн хичээлийг <b>Teams</b> болон <b>Математик X</b> сайтаас үзэж, даалгавраа хугацаанд нь илгээнэ. Ойлгоогүй зүйлээ давтлагаар нөхнө.</p></div></div>
+      <div class="step"><div><h3>Мэдэгдэлгүй тасалбал</h3><p>Хүүхэд мэдэгдэлгүй хичээлээ тасалбал багш тэр өдөртөө эцэг эх, асран хамгаалагчтай холбогдоно. Тасалсан цаг ирц, улирлын дүнд нөлөөлнө.</p></div></div>
+    </div>
+    <p class="note">📘 Коллежийн ирц, чөлөөний албан ёсны журмыг <a href="https://online.fliphtml5.com/pagam5511/prrq/" target="_blank" rel="noopener">Суралцагчийн гарын авлага</a>-аас уншина уу. 💡 Тэтгэлэг авахын тулд хүүхэд 3 жилийн сургалтаа бүрэн дуусгах ёстой тул ирцээ сайн байлгах нь чухал.</p>
+  </div>
+
+  <div class="sec">
+    <h2>Коллеж</h2>
+    <div class="card college">
+      <div><b>Өвөрхангай аймаг дахь Политехник коллеж</b><span>Өвөрхангай аймаг, Арвайхээр сум, 5-р баг</span></div>
+      <div class="cl">
+        <a href="tel:70322089">📞 7032-2089</a>
+        <a href="tel:70323454">📞 7032-3454</a>
+        <a href="mailto:uvurkhangai.college@gmail.com">✉️ uvurkhangai.college@gmail.com</a>
+        <a href="https://uvcollege.edu.mn/" target="_blank" rel="noopener">🌐 uvcollege.edu.mn</a>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:8px">Багштай холбогдож чадахгүй яаралтай тохиолдолд коллежийн утсаар холбогдоно уу.</p>
+  </div>
+
+  <div class="sec">
+    <h2>Чухал өдрүүд</h2>
+    <p class="sub">2026–2027 хичээлийн жил</p>
+    <div class="card"><ul class="up" id="allEv"></ul></div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">
+  Өвөрхангай аймаг дахь Политехник коллеж · Хэрэглээний программ 1-1 анги · Арвайхээр<br>
+  Энэ хуудсанд хүүхдийн хувийн мэдээлэл, дүн байршуулахгүй.
+</div></footer>
+
+<script>
+/* ============ БАГШ ЭНД ЗАСНА ============ */
+const MESSENGER = "";   // жишээ: "https://m.me/таны.хаяг"
+const PHONE     = "91996648";
+
+// Зар: шинийг хамгийн дээр нэмнэ. type: "hot" (чухал), "hol" (амралт), "" (энгийн)
+const ANN = [
+  {d:"2026-11-24", type:"hot", t:"Магадлан итгэмжлэлийн шинжээч ирсэн", b:"Коллежид магадлан итгэмжлэлийн үнэлгээ явагдаж байна. Хүүхдүүдээ хичээлдээ цагтаа ирж, ангиа цэвэр цэмцгэр байлгахад нь дэмжээрэй."},
+  {d:"2026-11-26", type:"hol", t:"Амралт · 11/26–11/27", b:"Пүрэв, Баасан гарагт хичээл орохгүй. Даваа гарагаас хичээл хэвийн үргэлжилнэ."},
+  {d:"2026-11-23", type:"", t:"Хүүхдүүд Teams-ээр суралцаж эхэллээ", b:"Хүүхэд бүр сургуулийн @uvcollege.edu.mn хаягтай боллоо. Даалгавар, видео хичээл, ангийн зар одооноос Teams-ээр явагдана."}
+];
+
+// Чухал өдрүүд
+const EVENTS = [
+  {d:"2026-11-24", t:"Магадлан итгэмжлэлийн үнэлгээ"},
+  {d:"2026-11-26", t:"Амралт (11/26–11/27)"},
+  {d:"2026-12-04", t:"Баасан гарагийн их цэвэрлэгээ эхэлнэ"},
+  {d:"2026-12-29", t:"Үндэсний эрх чөлөө, тусгаар тогтнолын өдөр — амралт"},
+  {d:"2026-12-31", t:"Жилийн эцэс. 01/01 — Шинэ жилийн баяр"},
+  {d:"2027-01-02", t:"Өвлийн амралт (01/02–01/24)"},
+  {d:"2027-01-25", t:"Амралтын дараа хичээл үргэлжилнэ"},
+  {d:"2027-02-24", t:"I улирлын математикийн шалгалт"},
+  {d:"2027-03-08", t:"Олон улсын эмэгтэйчүүдийн өдөр — амралт"},
+  {d:"2027-04-15", t:"Массын олимпиад (4 сарын дунд)"},
+  {d:"2027-05-24", t:"Математикийн жилийн эцсийн шалгалт"}
+];
+
+// Ангийн үүрэгт суралцагчид
+const ROLES = [
+  {ic:"👑", r:"Ангийг зохион байгуулах", name:"Шинэ-Од", help:"Занданбат", d:"Багшийн зар, сануулгыг цаг алдалгүй хүргэж, ангиа төлөөлж, бусад үүрэгт суралцагчдын ажлыг уялдуулна."},
+  {ic:"💛", r:"Сэтгэл зүй, эерэг уур амьсгал", name:"Занданбат", help:"", d:"Ангидаа халуун дулаан уур амьсгал бий болгож, найзуудаа эв найртай байлгаж, шинэ болон ганцаардсан найздаа тусална."},
+  {ic:"📚", r:"Сургалт ба ирц", name:"Даваадолгор", help:"Маргад-Эрдэнэ", d:"Хичээлийн ирцийг тэмдэглэж, даалгаврын хугацааг сануулж, «Хосоор суралцах баг»-ийг дэмжинэ."},
+  {ic:"💰", r:"Санхүү ба тооцоо", name:"Ойдовцэрэн", help:"Цэцэгмаа", d:"Ангийн арга хэмжээний хуримтлалыг хурааж, орлого, зарлагыг багш, ангийнхантайгаа зөвшилцөн ил тод тайлагнана."},
+  {ic:"🎭", r:"Соёл урлаг, спорт ба аялал", name:"Энхбаяр", help:"Тэргэл, Мөнхцэцэг", d:"Тэмцээн, үзлэгт ангиа бэлтгэж, аялал, баяр, чөлөөт цагийн арга хэмжээг санаачилж, зургийн цомог хөтөлнө."},
+  {ic:"🧹", r:"Ариун цэвэр, дадлагын газар", name:"Номин-Эрдэнэ", help:"Бадамцэрэн", d:"Жижүүрийн хуваарийг хянаж, дадлагын газрын аюулгүй, цэвэр байдлыг хангаж, ангиа агааржуулна."}
+];
+/* ======================================== */
+
+const MON=["1-р сар","2-р сар","3-р сар","4-р сар","5-р сар","6-р сар","7-р сар","8-р сар","9-р сар","10-р сар","11-р сар","12-р сар"];
+const today=new Date();today.setHours(0,0,0,0);
+const P=s=>{const[y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const md=x=>`${x.getMonth()+1}/${String(x.getDate()).padStart(2,"0")}`;
+
+document.getElementById("annList").innerHTML=ANN.map(a=>{const x=P(a.d),n=Math.round((today-x)/864e5);
+  const tag=n===0?'<span class="pill">Өнөөдөр</span>':(n<0?'<span class="pill">Удахгүй</span>':'');
+  return `<div class="ann ${a.type}"><div class="dt"><b>${x.getDate()}</b><small>${MON[x.getMonth()]}</small></div><div><h3>${esc(a.t)}${tag}</h3><p>${esc(a.b)}</p></div></div>`}).join("");
+
+const li=e=>{const x=P(e.d);return `<li class="${x<today?'past':''}"><b>${md(x)}</b><span>${esc(e.t)}</span></li>`};
+document.getElementById("upNext").innerHTML=EVENTS.filter(e=>P(e.d)>=today).slice(0,5).map(li).join("")||'<li>Удахгүй болох арга хэмжээ алга.</li>';
+document.getElementById("allEv").innerHTML=EVENTS.map(li).join("");
+
+document.getElementById("roleList").innerHTML=ROLES.map(x=>`<div class="card role"><div class="av">${x.ic}</div><div><div class="t">${esc(x.r)}</div><div class="nm">${x.name?esc(x.name):'Тодруулж байна'}</div>${x.help?`<div class="hp">Туслах: ${esc(x.help)}</div>`:''}<p>${esc(x.d)}</p></div></div>`).join("");
+
+const m=document.getElementById("msgBtn"),t=document.getElementById("telBtn");
+if(MESSENGER){m.href=MESSENGER;m.target="_blank"}else m.style.display="none";
+if(PHONE){t.href="tel:"+PHONE}else t.style.display="none";
+
+
+/* mobile day view from table */
+(function(){
+  const rows=[...document.querySelectorAll("#ttWrap tr")].slice(1);
+  const D=["Даваа","Мягмар","Лхагва","Пүрэв","Баасан"];
+  let cur=Math.min(Math.max(new Date().getDay()-1,0),4);
+  const box=document.getElementById("days");
+  function render(){
+    box.innerHTML='<div class="dsel">'+D.map((d,i)=>`<button class="${i===cur?'on':''}" data-i="${i}">${d.slice(0,3)}</button>`).join("")+'</div><div class="card">'+
+      rows.map(r=>{const c=r.children,td=c[cur+1];return `<div class="lsn ${td.classList.contains('m')?'m':''}"><div class="pr">${c[0].innerHTML}</div><div>${td.innerHTML}</div></div>`}).join("")+'</div>';
+    box.querySelectorAll("button").forEach(b=>b.onclick=()=>{cur=+b.dataset.i;render()});
+  }
+  render();
+})();
+
+/* tabs */
+const pages=[...document.querySelectorAll(".page")],tabs=[...document.querySelectorAll(".tab")];
+function show(id,push){
+  if(!document.getElementById("p-"+id))id="nuur";
+  pages.forEach(p=>p.classList.toggle("on",p.id==="p-"+id));
+  tabs.forEach(b=>b.classList.toggle("on",b.dataset.p===id));
+  if(push)history.replaceState(null,"","#"+id);
+  window.scrollTo({top:0,behavior:"instant"});
+}
+tabs.forEach(b=>b.onclick=()=>show(b.dataset.p,true));
+document.querySelectorAll("[data-go]").forEach(a=>a.onclick=e=>{e.preventDefault();show(a.dataset.go,true)});
+window.addEventListener("hashchange",()=>{const h=location.hash.slice(1);if(h==="cholqo"){show("holboo");setTimeout(()=>document.getElementById("cholqo").scrollIntoView({behavior:"smooth"}),50);return}show(h)});
+(function(){const h=location.hash.slice(1);if(h==="cholqo"){show("holboo");setTimeout(()=>document.getElementById("cholqo").scrollIntoView(),50)}else show(h||"nuur")})();
+</script>
+</body>
+</html>
