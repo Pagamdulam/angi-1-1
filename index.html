@@ -13,14 +13,18 @@
 <meta property="og:url" content="https://pagamdulam.github.io/angi-1-1/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 fill=%22%231e3a5f%22/><text x=%2232%22 y=%2242%22 font-family=%22Georgia%22 font-size=%2226%22 fill=%22white%22 text-anchor=%22middle%22>1-1</text></svg>">
 <style>
+@font-face{font-family:"Nunito";font-weight:200 1000;font-display:swap;src:url(fonts/nunito-cyrillic-ext-wght-normal.woff2) format("woff2");unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:"Nunito";font-weight:200 1000;font-display:swap;src:url(fonts/nunito-cyrillic-wght-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Nunito";font-weight:200 1000;font-display:swap;src:url(fonts/nunito-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Nunito";font-weight:200 1000;font-display:swap;src:url(fonts/nunito-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 :root{
   --paper:#faf8f4;--ink:#22262b;--mut:#6a6f76;--line:#dcd7cd;--soft:#f1ede5;
   --navy:#1e3a5f;--blue:#1e3a5f;--accent:#a8432a;--gold:#c99a2e;--cream:#f6efdc;--sky:#eef1f4;--sky2:#e2e7ec
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font:16.5px/1.65 "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
-h1,h2,h3,.serif{font-family:Georgia,"PT Serif","Times New Roman",serif;font-weight:700;letter-spacing:0}
+body{margin:0;background:var(--paper);color:var(--ink);font:16.5px/1.65 "Nunito",system-ui,sans-serif}
+h1,h2,h3,.serif{font-family:"Nunito",system-ui,sans-serif;font-weight:800;letter-spacing:0}
 a{color:var(--navy);text-decoration:underline;text-decoration-color:#b9c3cf;text-underline-offset:3px}
 a:hover{text-decoration-color:var(--navy)}
 .wrap{max-width:900px;margin:0 auto;padding:0 20px}
@@ -31,7 +35,7 @@ header{background:var(--paper);border-bottom:3px double var(--line)}
 .logo{display:none}
 .hd small{display:block;font-size:13px;color:var(--mut)}
 .hd h1{margin:2px 0 0;font-size:30px;line-height:1.2;color:var(--navy)}
-.moto{margin-left:auto;font-family:Georgia,serif;font-style:italic;color:var(--accent);font-size:17px}
+.moto{margin-left:auto;font-family:"Nunito",system-ui,sans-serif;font-style:italic;color:var(--accent);font-size:17px}
 
 /* tabs */
 .tabs{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
@@ -63,12 +67,12 @@ main.wrap{padding:26px 20px 40px}
 /* announcements */
 .ann{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--soft)}
 .ann:last-child{border-bottom:0}
-.dt{flex:0 0 54px;text-align:center;line-height:1.1;padding-top:2px;font-family:Georgia,serif}
-.dt b{display:block;font-size:24px;color:var(--navy)}.dt small{font-size:11.5px;color:var(--mut);font-family:"Segoe UI",Arial,sans-serif}
+.dt{flex:0 0 54px;text-align:center;line-height:1.1;padding-top:2px;font-family:"Nunito",system-ui,sans-serif}
+.dt b{display:block;font-size:24px;color:var(--navy)}.dt small{font-size:11.5px;color:var(--mut);font-family:"Nunito",system-ui,sans-serif}
 .ann.hot h3{color:var(--accent)}
 .ann.hol .dt b{color:var(--gold)}
 .ann h3{margin:0 0 2px;font-size:16px}.ann p{margin:0;font-size:15px}
-.pill{font-size:12.5px;font-weight:600;color:var(--accent);margin-left:8px;font-family:"Segoe UI",Arial,sans-serif}
+.pill{font-size:12.5px;font-weight:600;color:var(--accent);margin-left:8px;font-family:"Nunito",system-ui,sans-serif}
 
 .up{list-style:none;margin:0;padding:0}
 .up li{display:flex;gap:14px;align-items:baseline;padding:7px 0;border-bottom:1px dotted var(--line);font-size:15px}
@@ -102,11 +106,11 @@ main.wrap{padding:26px 20px 40px}
 .leg i{display:inline-block;width:10px;height:10px;margin-right:6px}
 details.yr{border-top:1px solid var(--line)}
 details.yr:last-of-type{border-bottom:1px solid var(--line)}
-details.yr summary{list-style:none;cursor:pointer;padding:12px 0;display:flex;align-items:baseline;gap:10px;font-weight:700;font-family:Georgia,serif;font-size:17px}
+details.yr summary{list-style:none;cursor:pointer;padding:12px 0;display:flex;align-items:baseline;gap:10px;font-weight:700;font-family:"Nunito",system-ui,sans-serif;font-size:17px}
 details.yr summary::-webkit-details-marker{display:none}
 details.yr summary .n{display:none}
-details.yr summary small{font-weight:400;color:var(--mut);font-family:"Segoe UI",Arial,sans-serif;font-size:14px}
-details.yr summary:after{content:"+";margin-left:auto;color:var(--mut);font-family:"Segoe UI",Arial,sans-serif}
+details.yr summary small{font-weight:400;color:var(--mut);font-family:"Nunito",system-ui,sans-serif;font-size:14px}
+details.yr summary:after{content:"+";margin-left:auto;color:var(--mut);font-family:"Nunito",system-ui,sans-serif}
 details.yr[open] summary:after{content:"–"}
 .yb{padding:0 0 16px;display:grid;grid-template-columns:1fr 1fr;gap:4px 28px;font-size:15px}
 .yb h4{margin:6px 0 2px;font-size:13px;color:var(--mut);font-weight:600}
@@ -116,23 +120,23 @@ details.yr[open] summary:after{content:"–"}
 .role{display:block}
 .av{display:none}
 .role .t{font-size:13.5px;color:var(--mut)}
-.role .nm{font-size:18px;font-weight:700;font-family:Georgia,serif;color:var(--navy);line-height:1.3}
+.role .nm{font-size:18px;font-weight:700;font-family:"Nunito",system-ui,sans-serif;color:var(--navy);line-height:1.3}
 .role .hp{font-size:13.5px;color:var(--mut);margin-bottom:4px}
 .role p{font-size:15px}
 
 /* rules */
 .rules{counter-reset:r;margin:0;padding:0;list-style:none;columns:2 300px;column-gap:28px}
 .rule{display:flex;gap:12px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--soft);break-inside:avoid}
-.rule:before{counter-increment:r;content:counter(r) ".";font-family:Georgia,serif;font-weight:700;color:var(--accent);min-width:18px}
+.rule:before{counter-increment:r;content:counter(r) ".";font-family:"Nunito",system-ui,sans-serif;font-weight:700;color:var(--accent);min-width:18px}
 .rule b{font-size:15.5px}.rule b+span{font-size:14.5px;color:var(--mut);display:block}
 
 /* steps */
 .steps{counter-reset:s;display:block}
 .step{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--line)}
-.step:before{counter-increment:s;content:counter(s);font-family:Georgia,serif;font-size:22px;line-height:1.1;font-weight:700;color:var(--gold);min-width:22px}
+.step:before{counter-increment:s;content:counter(s);font-family:"Nunito",system-ui,sans-serif;font-size:22px;line-height:1.1;font-weight:700;color:var(--gold);min-width:22px}
 .step h3{margin:0 0 2px;font-size:16.5px}.step p{margin:0;font-size:15.5px}
 .tip{border-left:3px solid var(--gold);padding:4px 0 4px 16px;margin:14px 0}
-.tip b{font-family:Georgia,serif}.tip ul{margin:6px 0 0;padding-left:20px}
+.tip b{font-family:"Nunito",system-ui,sans-serif}.tip ul{margin:6px 0 0;padding-left:20px}
 .note{border-left:3px solid var(--navy);padding:4px 0 4px 14px;font-size:15px;margin-top:14px}
 
 /* faq */
@@ -162,10 +166,10 @@ details.q p{margin:6px 0 2px;font-size:15.5px}
 .lsn small{display:block;color:var(--mut);font-size:12.5px}.lsn .pr small{white-space:nowrap;font-weight:400}
 #days .card{border-top:0;padding-top:0}
 .schol{display:grid;grid-template-columns:220px 1fr;gap:24px;border-top:1px solid var(--line);padding-top:16px}
-.schol .big{font-family:Georgia,serif;border-right:1px solid var(--line);padding-right:20px}
-.schol .big small{display:block;color:var(--mut);font-size:14px;font-family:"Segoe UI",Arial,sans-serif}
+.schol .big{font-family:"Nunito",system-ui,sans-serif;border-right:1px solid var(--line);padding-right:20px}
+.schol .big small{display:block;color:var(--mut);font-size:14px;font-family:"Nunito",system-ui,sans-serif}
 .schol .big b{display:block;font-size:32px;line-height:1.2;margin:4px 0;color:var(--navy)}
-.schol .big span{font-size:14px;color:var(--mut);font-family:"Segoe UI",Arial,sans-serif}
+.schol .big span{font-size:14px;color:var(--mut);font-family:"Nunito",system-ui,sans-serif}
 .schol ul{margin:0;padding-left:20px}.schol li{margin-bottom:6px}
 .college{display:block}
 .college b{display:block;font-size:16px}.college span{color:var(--mut);font-size:14.5px}
@@ -401,7 +405,7 @@ footer{border-top:3px double var(--line);padding:20px 0 28px;color:var(--mut);fo
     <details class="q"><summary>Хүүхэд маань өвдвөл яаж чөлөө авах вэ?</summary><p>Өглөө 08:00-аас өмнө анги даасан багшид (9199-6648) утсаар эсвэл мессежээр мэдэгдээрэй. Хэд хоног өвдвөл эмчийн тодорхойлолт авчирна. Дэлгэрэнгүйг «Холбоо» хэсгийн «Чөлөө авах журам»-аас харна уу.</p></details>
     <details class="q"><summary>Хүүхэд маань хичээл тасалсан бол яах вэ?</summary><p>Багшид өглөө нь мэдэгдээрэй. Тухайн өдрийн материал Teams болон Математик X сайтад байгаа тул гэрээсээ нөхөж үзэж болно.</p></details>
     <details class="q"><summary>Хүүхдийнхээ дүнг хаанаас харах вэ?</summary><p>Хүүхдийн Teams-ийн «Grades (Дүн)» хэсэгт харагдана. Хүүхэдтэйгээ хамт нээж хараарай. Дэлгэрэнгүйг багшаас хувиар асууж болно.</p></details>
-    <details class="q"><summary>Математик хэцүү байна гэвэл яах вэ?</summary><p>Даваа гарагт 15:25–18:10 цагт математикийн давтлага ордог. Хүүхдээ оролцохыг уриалаарай. Математик X сайтын «Сорил, давтлага» хэсгээс өмнөх ангийн мэдлэгээ давтаж болно.</p></details>
+    <details class="q"><summary>Математик хэцүү байна гэвэл яах вэ?</summary><p>Даваа гарагт 15:25–18:10 цагт математикийн давтлага ордог. Хүүхдээ оролцохыг уриалаарай. Математик X сайтын «Түвшин», «Давтлага» хэсгээс өмнөх ангийн мэдлэгээ давтаж болно.</p></details>
     <details class="q"><summary>Гэртээ компьютергүй бол яах вэ?</summary><p>Teams болон Математик X сайт гар утсан дээр ажилладаг. Шаардлагатай бол дадлагын газарт багшийн зөвшөөрлөөр ажиллаж болно.</p></details>
     <details class="q"><summary>Хурал хэзээ болох вэ?</summary><p>Хурлын товыг энэ хуудасны зарын самбар болон эцэг эхийн групп чатад урьдчилан мэдэгдэнэ.</p></details>
   </div>
