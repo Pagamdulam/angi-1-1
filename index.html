@@ -5,193 +5,179 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Хэрэглээний программ 1-1 · Эцэг эхийн булан</title>
 <meta name="description" content="ӨВПК Хэрэглээний программ 1-1 ангийн эцэг эх, асран хамгаалагчдад зориулсан мэдээллийн хуудас.">
-<meta name="theme-color" content="#1f3c88">
+<meta name="theme-color" content="#1e3a5f">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Хэрэглээний программ 1-1 · Эцэг эхийн булан">
 <meta property="og:description" content="Ангийн зар, хичээлийн хуваарь, хүүхдээ гэрээсээ хэрхэн дэмжих зөвлөгөө — ӨВПК">
 <meta property="og:image" content="https://pagamdulam.github.io/angi-1-1/og.png">
 <meta property="og:url" content="https://pagamdulam.github.io/angi-1-1/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💙</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 fill=%22%231e3a5f%22/><text x=%2232%22 y=%2242%22 font-family=%22Georgia%22 font-size=%2226%22 fill=%22white%22 text-anchor=%22middle%22>1-1</text></svg>">
 <style>
 :root{
-  --navy:#1f3c88;--blue:#2f5fd0;--sky:#eef3fd;--sky2:#dfe8fb;
-  --gold:#f4b740;--cream:#fff8ea;--ink:#1d2433;--mut:#667089;--line:#e3e8f2;
-  --bg:#f5f7fb;--r:16px;--sh:0 1px 2px rgba(29,36,51,.04),0 6px 20px rgba(29,36,51,.06)
+  --paper:#faf8f4;--ink:#22262b;--mut:#6a6f76;--line:#dcd7cd;--soft:#f1ede5;
+  --navy:#1e3a5f;--blue:#1e3a5f;--accent:#a8432a;--gold:#c99a2e;--cream:#f6efdc;--sky:#eef1f4;--sky2:#e2e7ec
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
-a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:960px;margin:0 auto;padding:0 18px}
+body{margin:0;background:var(--paper);color:var(--ink);font:16.5px/1.65 "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+h1,h2,h3,.serif{font-family:Georgia,"PT Serif","Times New Roman",serif;font-weight:700;letter-spacing:0}
+a{color:var(--navy);text-decoration:underline;text-decoration-color:#b9c3cf;text-underline-offset:3px}
+a:hover{text-decoration-color:var(--navy)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
 
-/* ---------- header ---------- */
-header{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-header:before{content:"";position:absolute;right:-90px;top:-110px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.06)}
-header:after{content:"";position:absolute;right:120px;bottom:-140px;width:220px;height:220px;border-radius:50%;background:rgba(244,183,64,.12)}
-.hd{position:relative;z-index:1;padding:26px 0 22px;display:flex;align-items:center;gap:18px}
-.logo{flex:0 0 58px;height:58px;border-radius:16px;background:#fff;color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;letter-spacing:-.5px}
-.hd small{display:block;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
-.hd h1{margin:2px 0 0;font-size:26px;line-height:1.2}
-.moto{margin-left:auto;background:var(--gold);color:#3b2a00;font-weight:800;font-size:14px;padding:7px 14px;border-radius:999px;white-space:nowrap}
+/* header */
+header{background:var(--paper);border-bottom:3px double var(--line)}
+.hd{padding:26px 0 18px;display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.logo{display:none}
+.hd small{display:block;font-size:13px;color:var(--mut)}
+.hd h1{margin:2px 0 0;font-size:30px;line-height:1.2;color:var(--navy)}
+.moto{margin-left:auto;font-family:Georgia,serif;font-style:italic;color:var(--accent);font-size:17px}
 
-/* ---------- tabs ---------- */
-.tabs{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
-.tabs .wrap{display:flex;gap:4px}
-.tab{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:14px 6px;font-weight:600;font-size:15px;color:var(--mut);border-bottom:3px solid transparent;cursor:pointer;background:none;border-top:0;border-left:0;border-right:0;font-family:inherit}
-.tab:hover{color:var(--navy)}
-.tab.on{color:var(--navy);border-bottom-color:var(--gold)}
-.tab i{font-style:normal;font-size:18px}
+/* tabs */
+.tabs{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.tabs .wrap{display:flex;gap:22px;overflow-x:auto}
+.tab{padding:12px 0 10px;font:600 15px inherit;font-family:inherit;color:var(--mut);background:none;border:0;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--accent)}
 
-/* ---------- layout ---------- */
-main.wrap{padding:28px 18px 40px}
-.page{display:none;animation:fade .25s ease}
-.page.on{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.sec{margin-bottom:30px}
-.sec>h2{font-size:20px;margin:0 0 4px}
+main.wrap{padding:26px 20px 40px}
+.page{display:none}.page.on{display:block}
+.sec{margin-bottom:34px}
+.sec>h2{font-size:22px;margin:0 0 4px;color:var(--navy)}
 .sec>.sub{color:var(--mut);margin:0 0 14px;font-size:15px}
-.grid{display:grid;gap:14px}
-.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.g4{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
-.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--sh)}
-.card h3{margin:0 0 6px;font-size:16.5px}
-.card p{margin:0;color:#3a445c}
-.muted{color:var(--mut);font-size:14px}
+.grid{display:grid;gap:0 28px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:transparent;border:0;border-top:1px solid var(--line);padding:14px 0 16px}
+.card h3{margin:0 0 4px;font-size:17px}
+.card p{margin:0}
+.muted{color:var(--mut);font-size:14.5px}
 
 /* intro */
-.intro{display:grid;grid-template-columns:1.6fr 1fr;gap:14px}
-.intro .card:first-child p+p{margin-top:10px}
-.lead{font-size:17px;line-height:1.65}
-.stat{background:var(--sky);border:0;box-shadow:none;text-align:center;padding:16px 10px}
-.stat b{display:block;font-size:26px;color:var(--navy);line-height:1.1}
-.stat span{font-size:13.5px;color:var(--mut)}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.intro{display:block}
+.intro .card{border-top:0;padding-top:0}
+.intro .card p+p{margin-top:10px}
+.lead{font-size:18px;line-height:1.7}
+.facts{font-size:14.5px;color:var(--mut);border-left:3px solid var(--gold);padding:2px 0 2px 12px;margin-top:14px}
 
 /* announcements */
-.ann{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
-.ann:last-child{border-bottom:0;padding-bottom:0}.ann:first-child{padding-top:0}
-.dt{flex:0 0 56px;height:56px;border-radius:14px;background:var(--sky);color:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
-.dt b{font-size:20px}.dt small{font-size:11px;margin-top:3px;color:var(--mut)}
-.ann.hot .dt{background:#fdecea;color:#b4372d}.ann.hol .dt{background:var(--cream);color:#8a5a00}
-.ann h3{margin:0 0 2px;font-size:15.5px}.ann p{margin:0;font-size:14.5px;color:#3a445c}
-.pill{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--sky2);color:var(--navy);margin-left:6px;vertical-align:2px}
+.ann{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--soft)}
+.ann:last-child{border-bottom:0}
+.dt{flex:0 0 54px;text-align:center;line-height:1.1;padding-top:2px;font-family:Georgia,serif}
+.dt b{display:block;font-size:24px;color:var(--navy)}.dt small{font-size:11.5px;color:var(--mut);font-family:"Segoe UI",Arial,sans-serif}
+.ann.hot h3{color:var(--accent)}
+.ann.hol .dt b{color:var(--gold)}
+.ann h3{margin:0 0 2px;font-size:16px}.ann p{margin:0;font-size:15px}
+.pill{font-size:12.5px;font-weight:600;color:var(--accent);margin-left:8px;font-family:"Segoe UI",Arial,sans-serif}
 
-/* upcoming */
 .up{list-style:none;margin:0;padding:0}
-.up li{display:flex;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.up li{display:flex;gap:14px;align-items:baseline;padding:7px 0;border-bottom:1px dotted var(--line);font-size:15px}
 .up li:last-child{border-bottom:0}
-.up b{flex:0 0 74px;color:var(--navy);font-size:14px}
-.up li.past{opacity:.5}
+.up b{flex:0 0 52px;color:var(--navy);font-variant-numeric:tabular-nums}
+.up li.past{color:#a3a7ac}.up li.past b{color:#a3a7ac}
 
-/* quick links */
-.ql{display:flex;gap:14px;align-items:center;padding:16px 18px;color:inherit}
-.ql:hover{text-decoration:none;border-color:var(--sky2);transform:translateY(-1px)}
-.ql .ic{flex:0 0 44px;height:44px;border-radius:12px;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:22px}
-.ql b{display:block;font-size:15.5px;color:var(--ink)}.ql b+span{display:block;font-size:13.5px;color:var(--mut)}
-.card{transition:transform .15s,border-color .15s}
+/* quick links → plain list */
+.links{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.links li{padding:10px 0;border-bottom:1px solid var(--line)}
+.links a{font-weight:600}.links span{color:var(--mut);font-size:14.5px;margin-left:6px}
+.ql{display:block;text-decoration:none}.ql b{display:block;color:var(--navy);text-decoration:underline;text-decoration-color:#b9c3cf;text-underline-offset:3px}.ql b+span{display:block;font-size:14.5px;color:var(--mut)}
+.ql:hover b{text-decoration-color:var(--navy)}
 
 /* timetable */
-.tt{width:100%;border-collapse:separate;border-spacing:0;font-size:14px}
-.tt th{background:var(--navy);color:#fff;font-weight:600;padding:10px;text-align:left}
-.tt th:first-child{border-radius:10px 0 0 0}.tt th:last-child{border-radius:0 10px 0 0}
-.tt td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
-.tt td small{display:block;color:var(--mut);font-size:12px;margin-top:2px}
-.tt td:first-child{white-space:nowrap;font-weight:700;color:var(--navy);background:#fafbfe}
+.tt{width:100%;border-collapse:collapse;font-size:14px;background:#fff}
+.tt th{border-bottom:2px solid var(--ink);font-weight:700;padding:8px 10px;text-align:left}
+.tt td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tt td small{display:block;color:var(--mut);font-size:12px;margin-top:1px}
+.tt td:first-child{white-space:nowrap;font-weight:700}
 .tt .m{background:var(--cream)}
-.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:0!important;padding:0!important}
 .scroll .tt{min-width:660px}
-.ex{display:flex;gap:12px;align-items:flex-start}
-.ex .d{flex:0 0 64px;font-weight:800;color:var(--navy);font-size:14px}
-.ex b{display:block;font-size:15px}.ex small{color:var(--mut);font-size:13px}
+.ex{display:flex;gap:14px;align-items:baseline}
+.ex .d{flex:0 0 64px;font-weight:700;color:var(--navy);font-size:14.5px}
+.ex b{display:block;font-size:15.5px}.ex small{color:var(--mut);font-size:13.5px}
 
 /* program */
-.bar{display:flex;height:14px;border-radius:999px;overflow:hidden;margin:12px 0 10px}
-.leg{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13.5px;color:#3a445c}
-.leg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px}
-details.yr{background:#fff;border:1px solid var(--line);border-radius:var(--r);margin-bottom:10px;box-shadow:var(--sh);overflow:hidden}
-details.yr summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;align-items:center;gap:12px;font-weight:700}
+.bar{display:flex;height:10px;margin:10px 0 8px}
+.leg{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:14px}
+.leg i{display:inline-block;width:10px;height:10px;margin-right:6px}
+details.yr{border-top:1px solid var(--line)}
+details.yr:last-of-type{border-bottom:1px solid var(--line)}
+details.yr summary{list-style:none;cursor:pointer;padding:12px 0;display:flex;align-items:baseline;gap:10px;font-weight:700;font-family:Georgia,serif;font-size:17px}
 details.yr summary::-webkit-details-marker{display:none}
-details.yr summary .n{flex:0 0 38px;height:38px;border-radius:12px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px}
-details.yr summary small{font-weight:500;color:var(--mut);margin-left:auto}
-details.yr summary:after{content:"▾";color:var(--mut);transition:transform .2s}
-details.yr[open] summary:after{transform:rotate(180deg)}
-.yb{padding:0 20px 18px 70px;display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;font-size:14.5px;color:#3a445c}
-.yb h4{margin:6px 0 2px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
-.yb ul{margin:0;padding-left:18px}
+details.yr summary .n{display:none}
+details.yr summary small{font-weight:400;color:var(--mut);font-family:"Segoe UI",Arial,sans-serif;font-size:14px}
+details.yr summary:after{content:"+";margin-left:auto;color:var(--mut);font-family:"Segoe UI",Arial,sans-serif}
+details.yr[open] summary:after{content:"–"}
+.yb{padding:0 0 16px;display:grid;grid-template-columns:1fr 1fr;gap:4px 28px;font-size:15px}
+.yb h4{margin:6px 0 2px;font-size:13px;color:var(--mut);font-weight:600}
+.yb ul{margin:0;padding-left:18px}.yb p{margin:0}
 
 /* roles */
-.role{display:flex;gap:14px}
-.av{flex:0 0 48px;height:48px;border-radius:50%;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:22px}
-.role .t{font-size:13px;color:var(--mut);font-weight:600}
-.role .nm{font-size:17px;font-weight:800;color:var(--navy);line-height:1.3}
-.role .hp{font-size:13px;color:#3a445c;margin-bottom:4px}
-.role p{font-size:14px}
+.role{display:block}
+.av{display:none}
+.role .t{font-size:13.5px;color:var(--mut)}
+.role .nm{font-size:18px;font-weight:700;font-family:Georgia,serif;color:var(--navy);line-height:1.3}
+.role .hp{font-size:13.5px;color:var(--mut);margin-bottom:4px}
+.role p{font-size:15px}
 
 /* rules */
-.rules{counter-reset:r;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
-.rule{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
-.rule:before{counter-increment:r;content:counter(r);flex:0 0 30px;height:30px;border-radius:50%;background:var(--gold);color:#3b2a00;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
-.rule b{display:block;font-size:15px}.rule span{font-size:13.5px;color:var(--mut)}
+.rules{counter-reset:r;margin:0;padding:0;list-style:none;columns:2 300px;column-gap:28px}
+.rule{display:flex;gap:12px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--soft);break-inside:avoid}
+.rule:before{counter-increment:r;content:counter(r) ".";font-family:Georgia,serif;font-weight:700;color:var(--accent);min-width:18px}
+.rule b{font-size:15.5px}.rule b+span{font-size:14.5px;color:var(--mut);display:block}
 
 /* steps */
-.steps{counter-reset:s;display:grid;gap:10px}
-.step{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-.step:before{counter-increment:s;content:counter(s);flex:0 0 34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
-.step h3{margin:0 0 3px;font-size:16px}.step p{margin:0;color:#3a445c;font-size:15px}
-.tip{background:var(--cream);border:1px solid #f3dfb2;border-radius:var(--r);padding:16px 18px}
-.tip b{color:#7a5100}.tip ul{margin:6px 0 0;padding-left:20px}
-.note{background:var(--sky);border-radius:12px;padding:12px 16px;font-size:14.5px;color:#2b3550;margin-top:14px}
+.steps{counter-reset:s;display:block}
+.step{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--line)}
+.step:before{counter-increment:s;content:counter(s);font-family:Georgia,serif;font-size:22px;line-height:1.1;font-weight:700;color:var(--gold);min-width:22px}
+.step h3{margin:0 0 2px;font-size:16.5px}.step p{margin:0;font-size:15.5px}
+.tip{border-left:3px solid var(--gold);padding:4px 0 4px 16px;margin:14px 0}
+.tip b{font-family:Georgia,serif}.tip ul{margin:6px 0 0;padding-left:20px}
+.note{border-left:3px solid var(--navy);padding:4px 0 4px 14px;font-size:15px;margin-top:14px}
 
 /* faq */
-details.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:8px}
-details.q summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px}
+details.q{border-top:1px solid var(--line);padding:11px 0}
+details.q:last-of-type{border-bottom:1px solid var(--line)}
+details.q summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px}
 details.q summary::-webkit-details-marker{display:none}
-details.q summary:after{content:"+";color:var(--blue);font-size:20px;line-height:1}
+details.q summary:after{content:"+";color:var(--mut)}
 details.q[open] summary:after{content:"–"}
-details.q p{margin:8px 0 0;color:#3a445c;font-size:15px}
+details.q p{margin:6px 0 2px;font-size:15.5px}
 
 /* contact */
-.contact{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}
-.contact .ph{width:84px;height:84px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800}
-.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;padding:11px 18px;border-radius:12px;background:var(--navy);color:#fff}
-.btn:hover{text-decoration:none;filter:brightness(1.1)}
-.btn.alt{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+.contact{display:block;border-top:0}
+.contact .ph{display:none}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.btn{display:inline-block;font-weight:600;padding:9px 16px;border-radius:4px;background:var(--navy);color:#fff;text-decoration:none;font-size:15px}
+.btn:hover{background:#16304f}
+.btn.alt{background:transparent;color:var(--navy);border:1px solid var(--navy)}
 
 #days{display:none}
-.dsel{display:flex;gap:6px;margin-bottom:10px}
-.dsel button{flex:1;border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 0;font:600 14px inherit;font-family:inherit;color:var(--mut)}
-.dsel button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
-.lsn{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.lsn:last-child{border-bottom:0}
-.lsn .pr{flex:0 0 92px;font-weight:800;color:var(--navy);font-size:14px;line-height:1.3}.lsn .pr small{display:block;font-weight:500;color:var(--mut);font-size:12px}
-.lsn.m{background:var(--cream);margin:0 -20px;padding:12px 20px}
-.lsn small{display:block;color:var(--mut);font-size:12.5px}.lsn .pr small{white-space:nowrap}
-@media (max-width:720px){#ttWrap{display:none}#days{display:block}.hd small{font-size:10.5px;letter-spacing:.08em}}
-.schol{display:grid;grid-template-columns:240px 1fr;gap:20px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--sh)}
-.schol .big{background:linear-gradient(135deg,var(--navy),#3d63c9);color:#fff;border-radius:14px;padding:20px;display:flex;flex-direction:column;justify-content:center;text-align:center}
-.schol .big small{opacity:.85;font-size:13px}.schol .big b{font-size:32px;line-height:1.2;margin:6px 0;color:var(--gold)}.schol .big span{font-size:13.5px;opacity:.9}
-.schol ul{margin:0;padding-left:20px;color:#3a445c}.schol li{margin-bottom:6px}
-.college{display:flex;flex-wrap:wrap;gap:14px 30px;align-items:center;justify-content:space-between}
-.college b{display:block;font-size:16px}.college span{color:var(--mut);font-size:14px}
-.cl{display:flex;flex-wrap:wrap;gap:8px}.cl a{background:var(--sky);padding:7px 12px;border-radius:10px;font-size:14px;font-weight:600;color:var(--navy)}
-@media (max-width:720px){.schol{grid-template-columns:1fr}}
-#cholqo{scroll-margin-top:70px}
-footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--mut);font-size:13.5px;text-align:center}
-
-/* ---------- mobile ---------- */
+.dsel{display:flex;gap:4px;margin-bottom:8px;border-bottom:1px solid var(--line)}
+.dsel button{flex:1;border:0;background:none;padding:8px 0;font:600 14px inherit;font-family:inherit;color:var(--mut);border-bottom:2px solid transparent}
+.dsel button.on{color:var(--ink);border-bottom-color:var(--accent)}
+.lsn{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}.lsn:last-child{border-bottom:0}
+.lsn .pr{flex:0 0 88px;font-weight:700;font-size:14px;line-height:1.3}
+.lsn.m{background:var(--cream);margin:0 -10px;padding:10px}
+.lsn small{display:block;color:var(--mut);font-size:12.5px}.lsn .pr small{white-space:nowrap;font-weight:400}
+#days .card{border-top:0;padding-top:0}
+.schol{display:grid;grid-template-columns:220px 1fr;gap:24px;border-top:1px solid var(--line);padding-top:16px}
+.schol .big{font-family:Georgia,serif;border-right:1px solid var(--line);padding-right:20px}
+.schol .big small{display:block;color:var(--mut);font-size:14px;font-family:"Segoe UI",Arial,sans-serif}
+.schol .big b{display:block;font-size:32px;line-height:1.2;margin:4px 0;color:var(--navy)}
+.schol .big span{font-size:14px;color:var(--mut);font-family:"Segoe UI",Arial,sans-serif}
+.schol ul{margin:0;padding-left:20px}.schol li{margin-bottom:6px}
+.college{display:block}
+.college b{display:block;font-size:16px}.college span{color:var(--mut);font-size:14.5px}
+.cl{display:flex;flex-wrap:wrap;gap:4px 20px;margin-top:8px;font-size:15px}
+#cholqo{scroll-margin-top:60px}
+footer{border-top:3px double var(--line);padding:20px 0 28px;color:var(--mut);font-size:13.5px}
 @media (max-width:720px){
-  .hd{padding:20px 0 18px;gap:14px}.logo{flex-basis:48px;height:48px;font-size:17px;border-radius:14px}
-  .hd h1{font-size:21px}.moto{display:none}
-  .tabs{position:fixed;top:auto;bottom:0;left:0;right:0;border-top:1px solid var(--line);border-bottom:0;padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -4px 16px rgba(29,36,51,.06)}
-  .tabs .wrap{padding:0 4px}
-  .tab{flex-direction:column;gap:2px;font-size:11.5px;padding:8px 2px 9px;border-bottom:0;border-top:3px solid transparent}
-  .tab.on{border-top-color:var(--gold)}
-  main.wrap{padding:20px 16px 96px}
-  .intro{grid-template-columns:1fr}
-  .yb{grid-template-columns:1fr;padding-left:20px}
-  .contact{grid-template-columns:1fr;text-align:center}.contact .ph{margin:0 auto}.btns{justify-content:center}
-  footer{padding-bottom:100px}
+  #ttWrap{display:none}#days{display:block}
+  .hd{padding:18px 0 12px}.hd h1{font-size:24px}.moto{margin-left:0;font-size:15px;width:100%}
+  .tabs .wrap{gap:18px}
+  .yb{grid-template-columns:1fr}
+  .schol{grid-template-columns:1fr}.schol .big{border-right:0;border-bottom:1px solid var(--line);padding:0 0 12px}
 }
 @media print{.tabs{display:none}.page{display:block!important}}
 </style>
@@ -201,18 +187,18 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--mut);fon
 <header><div class="wrap hd">
   <div class="logo">1-1</div>
   <div>
-    <small>ӨВПК · Эцэг эх, асран хамгаалагчийн булан</small>
+    <small>Өвөрхангай аймаг дахь Политехник коллеж · эцэг эх, асран хамгаалагчдад</small>
     <h1>Хэрэглээний программ 1-1</h1>
   </div>
-  <div class="moto">Би биш — бид 💙</div>
+  <div class="moto">«Би биш — бид»</div>
 </div></header>
 
 <nav class="tabs"><div class="wrap">
-  <button class="tab" data-p="nuur"><i>🏠</i>Нүүр</button>
-  <button class="tab" data-p="surlaga"><i>📚</i>Сурлага</button>
-  <button class="tab" data-p="angi"><i>👥</i>Анги</button>
-  <button class="tab" data-p="etseg"><i>💡</i>Эцэг эхэд</button>
-  <button class="tab" data-p="holboo"><i>📞</i>Холбоо</button>
+  <button class="tab" data-p="nuur">Нүүр</button>
+  <button class="tab" data-p="surlaga">Сурлага</button>
+  <button class="tab" data-p="angi">Анги</button>
+  <button class="tab" data-p="etseg">Эцэг эхэд</button>
+  <button class="tab" data-p="holboo">Холбоо</button>
 </div></nav>
 
 <main class="wrap">
@@ -223,31 +209,26 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--mut);fon
     <div class="card">
       <p class="lead">Бид Өвөрхангай аймаг дахь Политехник коллежийн <b>«Хэрэглээний программ»</b> мэргэжлийн 1-р курсийн суралцагчид. Компьютерын хэрэглээний программ, программчлал, хиймэл оюун ухааныг ашиглаж сурахын зэрэгцээ ерөнхий боловсролын хичээлүүдээ судалж байна.</p>
       <p class="muted"><b>«Би биш — бид»</b> бол манай ангийн уриа. Бид бие биедээ тусалж, хамтдаа суралцаж, хамтдаа өсөж хөгжинө. 2026 оны 11 сараас эхлэн хичээл, даалгавраа <b>Microsoft Teams</b>-ээр цахимаар хийж байна.</p>
-    </div>
-    <div class="stats">
-      <div class="card stat"><b>19</b><span>суралцагч</span></div>
-      <div class="card stat"><b>3 жил</b><span>суралцах хугацаа</span></div>
-      <div class="card stat"><b>70%</b><span>нь дадлага</span></div>
-      <div class="card stat"><b>IV</b><span>мэргэшлийн түвшин</span></div>
+      <p class="facts">19 суралцагч · 3 жил суралцана · сургалтын 70% нь дадлага · IV мэргэшлийн түвшин</p>
     </div>
   </div>
 
   <div class="sec grid g2">
     <div class="card">
-      <h3>📢 Зарын самбар</h3>
+      <h3>Зарын самбар</h3>
       <div id="annList" style="margin-top:10px"></div>
     </div>
     <div class="card">
-      <h3>📅 Удахгүй болох</h3>
+      <h3>Удахгүй болох</h3>
       <ul class="up" id="upNext" style="margin-top:6px"></ul>
-      <p style="margin-top:10px;font-size:14px"><a href="#holboo" data-go="holboo">Бүх чухал өдрийг харах →</a></p>
+      <p style="margin-top:10px;font-size:14px"><a href="#holboo" data-go="holboo">Бүх чухал өдрийг харах</a></p>
     </div>
   </div>
 
   <div class="sec grid g3">
-    <a class="card ql" href="#surlaga" data-go="surlaga"><span class="ic">🗓️</span><span><b>Хичээлийн хуваарь</b><span>Өдөр бүрийн хичээл, давтлагын цаг</span></span></a>
-    <a class="card ql" href="https://pagamdulam.github.io/math10/" target="_blank" rel="noopener"><span class="ic">📐</span><span><b>Математик X</b><span>Видео хичээл, дасгал, бие даан суралцах</span></span></a>
-    <a class="card ql" href="#etseg" data-go="etseg"><span class="ic">🎓</span><span><b>Тэтгэлэг ба зөвлөгөө</b><span>Төгсөхөд 6 сая ₮, гэрээсээ дэмжих 5 зөвлөгөө</span></span></a>
+    <a class="card ql" href="#surlaga" data-go="surlaga"><span><b>Хичээлийн хуваарь</b><span>Өдөр бүрийн хичээл, давтлагын цаг</span></span></a>
+    <a class="card ql" href="https://pagamdulam.github.io/math10/" target="_blank" rel="noopener"><span><b>Математик X</b><span>Видео хичээл, дасгал, бие даан суралцах</span></span></a>
+    <a class="card ql" href="#etseg" data-go="etseg"><span><b>Тэтгэлэг ба зөвлөгөө</b><span>Төгсөхөд 6 сая ₮, гэрээсээ дэмжих 5 зөвлөгөө</span></span></a>
   </div>
 </section>
 
@@ -283,11 +264,11 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--mut);fon
     <h2>Математик</h2>
     <p class="sub">1-р курст 108 цаг (54 хичээл). 10-р ангийн агуулгыг бүрэн хамрахын зэрэгцээ өмнөх ангиудын хоцрогдлыг нөхөнө.</p>
     <div class="grid g3">
-      <div class="card"><h3>🗓️ Хэзээ орох вэ?</h3><p>Даваа 09:25 гарагт хичээл, Лхагва гарагт долоо хоног алгасан хичээл, Даваа 15:25–18:10 цагт давтлага. Давтлагад шинэ сэдэв орохгүй, бататгал хийнэ.</p></div>
-      <div class="card"><h3>🤝 Хамтдаа суралцацгаая</h3><p>Хичээлийн эхний 30 минутад хүүхдүүд 3–4 хүний багаар ээлжилж, сурсан сэдвээ ангийнхандаа <b>өөрсдөө заадаг</b>.</p></div>
-      <div class="card"><h3>🎯 Үнэлгээ</h3><p>Сэдэв бүрийн дараа богино сорил, улирлын төгсгөлд шалгалт. Алдсан бодлогоо давтлагаар ганцаарчлан засна.</p></div>
+      <div class="card"><h3>Хэзээ орох вэ?</h3><p>Даваа 09:25 гарагт хичээл, Лхагва гарагт долоо хоног алгасан хичээл, Даваа 15:25–18:10 цагт давтлага. Давтлагад шинэ сэдэв орохгүй, бататгал хийнэ.</p></div>
+      <div class="card"><h3>Хамтдаа суралцацгаая</h3><p>Хичээлийн эхний 30 минутад хүүхдүүд 3–4 хүний багаар ээлжилж, сурсан сэдвээ ангийнхандаа <b>өөрсдөө заадаг</b>.</p></div>
+      <div class="card"><h3>Үнэлгээ</h3><p>Сэдэв бүрийн дараа богино сорил, улирлын төгсгөлд шалгалт. Алдсан бодлогоо давтлагаар ганцаарчлан засна.</p></div>
     </div>
-    <p class="note">📐 Видео хичээл, дасгалыг <a href="https://pagamdulam.github.io/math10/" target="_blank" rel="noopener">Математик X</a> сайтаас гэрээсээ үзэж болно.</p>
+    <p class="note">Видео хичээл, дасгалыг <a href="https://pagamdulam.github.io/math10/" target="_blank" rel="noopener">Математик X</a> сайтаас гэрээсээ үзэж болно.</p>
   </div>
 
   <div class="sec">
@@ -351,8 +332,8 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--mut);fon
     <h2>Ангийн цэвэрлэгээ</h2>
     <p class="sub">Манай анги 303 (онолын анги), 227 (дадлагын газар) гэсэн хоёр өрөөг хариуцдаг.</p>
     <div class="grid g2">
-      <div class="card"><h3>🧹 Өдрийн жижүүр</h3><p>Даваагаас Пүрэв хүртэл өрөө бүрт 2 хүүхэд ээлжилнэ. Жижүүрийн өдөр хүүхэд тань хичээл тараад 20–30 минут хоцорч ирж болно.</p></div>
-      <div class="card"><h3>✨ Баасан гарагийн их цэвэрлэгээ</h3><p>Хүүхэд бүр 14 хоногт 1 удаа оролцож, өрөө болон үүргээ ээлжилнэ. Ариун цэврийн хариуцагч шалгаж тэмдэглэнэ.</p></div>
+      <div class="card"><h3>Өдрийн жижүүр</h3><p>Даваагаас Пүрэв хүртэл өрөө бүрт 2 хүүхэд ээлжилнэ. Жижүүрийн өдөр хүүхэд тань хичээл тараад 20–30 минут хоцорч ирж болно.</p></div>
+      <div class="card"><h3>Баасан гарагийн их цэвэрлэгээ</h3><p>Хүүхэд бүр 14 хоногт 1 удаа оролцож, өрөө болон үүргээ ээлжилнэ. Ариун цэврийн хариуцагч шалгаж тэмдэглэнэ.</p></div>
     </div>
   </div>
 </section>
@@ -370,9 +351,9 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--mut);fon
           <li>Манай анги <b>3 жилийн</b> сургалттай тул төгсөхдөө 6 сая төгрөгийн тэтгэлэг авна.</li>
           <li>Хөдөө орон нутгийн суралцагчид <b>дотуур байр, халуун хоолоор үнэ төлбөргүй</b> хангагдана.</li>
         </ul>
-        <p style="margin-top:10px">💡 Тэтгэлэг авах гол нөхцөл бол хичээлээ тасалдуулахгүй, <b>3 жилийн сургалтаа бүрэн дуусгах</b> явдал юм. Хүүхдээ эцэс хүртэл суралцахад нь дэмжээрэй.</p>
+        <p style="margin-top:10px">Тэтгэлэг авах гол нөхцөл бол хичээлээ тасалдуулахгүй, <b>3 жилийн сургалтаа бүрэн дуусгах</b> явдал юм. Хүүхдээ эцэс хүртэл суралцахад нь дэмжээрэй.</p>
         <div class="btns" style="margin-top:12px">
-          <a class="btn" href="https://legalinfo.mn/mn/detail?lawId=16960661169331&showType=1" target="_blank" rel="noopener">📄 Тэтгэлэг олгох журам</a>
+          <a class="btn" href="https://legalinfo.mn/mn/detail?lawId=16960661169331&showType=1" target="_blank" rel="noopener">Тэтгэлэг олгох журам</a>
         </div>
         <p class="muted" style="margin-top:8px">Журмын нарийн нөхцөлийг legalinfo.mn-ээс уншина уу. Тодорхой асуудлаар коллежийн сургалтын албанаас лавлаарай.</p>
       </div>
@@ -383,12 +364,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--mut);fon
     <h2>Коллежийн хэрэгтэй мэдээлэл</h2>
     <p class="sub">Коллежийн албан ёсны сайт uvcollege.edu.mn-ээс.</p>
     <div class="grid g3">
-      <a class="card ql" href="https://online.fliphtml5.com/pagam5511/prrq/" target="_blank" rel="noopener"><span class="ic">📘</span><span><b>Суралцагчийн гарын авлага</b><span>Суралцагчийн эрх, үүрэг, журмууд</span></span></a>
-      <a class="card ql" href="https://uvcollege.edu.mn/menu/durem-juram-2" target="_blank" rel="noopener"><span class="ic">📜</span><span><b>Дүрэм, журам</b><span>Коллежийн дүрэм, дотоод журмууд</span></span></a>
-      <a class="card ql" href="https://uvcollege.edu.mn/menu/dotuur-bair" target="_blank" rel="noopener"><span class="ic">🏠</span><span><b>Дотуур байр</b><span>Байрны мэдээлэл</span></span></a>
-      <a class="card ql" href="https://uvcollege.edu.mn/menu/klub-duguilan" target="_blank" rel="noopener"><span class="ic">🎨</span><span><b>Клуб, дугуйлан</b><span>Хичээлээс гадуурх хөгжил</span></span></a>
-      <a class="card ql" href="https://lib4u.online/?lib=uvpc" target="_blank" rel="noopener"><span class="ic">📚</span><span><b>Номын сангийн каталог</b><span>Цахим каталогоос ном хайх</span></span></a>
-      <a class="card ql" href="https://www.facebook.com/uvcollege" target="_blank" rel="noopener"><span class="ic">📣</span><span><b>Коллежийн Facebook</b><span>Сургуулийн мэдээ, зар</span></span></a>
+      <a class="card ql" href="https://online.fliphtml5.com/pagam5511/prrq/" target="_blank" rel="noopener"><span><b>Суралцагчийн гарын авлага</b><span>Суралцагчийн эрх, үүрэг, журмууд</span></span></a>
+      <a class="card ql" href="https://uvcollege.edu.mn/menu/durem-juram-2" target="_blank" rel="noopener"><span><b>Дүрэм, журам</b><span>Коллежийн дүрэм, дотоод журмууд</span></span></a>
+      <a class="card ql" href="https://uvcollege.edu.mn/menu/dotuur-bair" target="_blank" rel="noopener"><span><b>Дотуур байр</b><span>Байрны мэдээлэл</span></span></a>
+      <a class="card ql" href="https://uvcollege.edu.mn/menu/klub-duguilan" target="_blank" rel="noopener"><span><b>Клуб, дугуйлан</b><span>Хичээлээс гадуурх хөгжил</span></span></a>
+      <a class="card ql" href="https://lib4u.online/?lib=uvpc" target="_blank" rel="noopener"><span><b>Номын сангийн каталог</b><span>Цахим каталогоос ном хайх</span></span></a>
+      <a class="card ql" href="https://www.facebook.com/uvcollege" target="_blank" rel="noopener"><span><b>Коллежийн Facebook</b><span>Сургуулийн мэдээ, зар</span></span></a>
     </div>
   </div>
   <div class="sec">
@@ -397,7 +378,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--mut);fon
     <div class="steps">
       <div class="step"><div><h3>Өдөр бүр 5 минут асуу</h3><p>«Өнөөдөр Teams-д юу хийсэн бэ? Ямар даалгавар байна?» Хүүхэд өөрөө тайлбарлах тусам илүү сайн ойлгодог.</p></div></div>
       <div class="step"><div><h3>Тогтмол цаг, тайван орчин</h3><p>Өдөр бүр 30–60 минутыг хичээлд зориулахад нь тусална уу. Энэ үед утас, зурагтаас хол байлгаарай.</p></div></div>
-      <div class="step"><div><h3>Математик X-ийг хамтдаа үз</h3><p>Хичээл бүрийн видео, дасгал нэг дор бий. Ойлгоогүй хичээлээ дахин үзэж болно. <a href="https://pagamdulam.github.io/math10/" target="_blank" rel="noopener">Сайт руу орох →</a></p></div></div>
+      <div class="step"><div><h3>Математик X-ийг хамтдаа үз</h3><p>Хичээл бүрийн видео, дасгал нэг дор бий. Ойлгоогүй хичээлээ дахин үзэж болно. <a href="https://pagamdulam.github.io/math10/" target="_blank" rel="noopener">Сайт руу орох</a></p></div></div>
       <div class="step"><div><h3>Хичээж байгааг нь магт</h3><p>Зөвхөн дүнг нь биш, хүчин чармайлтыг нь магтаарай. Алдах нь суралцахын нэг хэсэг.</p></div></div>
       <div class="step"><div><h3>Багштай холбоотой бай</h3><p>Хүүхдийн тань зан байдал, нойр, хоолны дуршилд өөрчлөлт гарвал багшид хувиар хэлээрэй. Хамтдаа шийдье.</p></div></div>
     </div>
@@ -405,22 +386,22 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--mut);fon
 
   <div class="sec grid g2">
     <div class="tip">
-      <b>💬 Хүүхэдтэйгээ ярихдаа асууж болох асуултууд</b>
+      <b>Хүүхэдтэйгээ ярихдаа асууж болох асуултууд</b>
       <ul><li>«Өнөөдөр хамгийн сонирхолтой нь юу байсан бэ?»</li><li>«Ямар бодлого хэцүү байсан бэ? Надад тайлбарлаад өгөөч.»</li><li>«Чамд юугаар туслах вэ?»</li></ul>
     </div>
     <div class="card">
-      <h3>💻 Microsoft Teams гэж юу вэ?</h3>
+      <h3>Microsoft Teams гэж юу вэ?</h3>
       <p>Хүүхэд бүр <b>@uvcollege.edu.mn</b> хаягтай. Даалгавар, видео хичээл, ангийн зар бүгд Teams-ээр явагдана. Утсанд Play Store / App Store-оос үнэгүй суулгана. Хүүхдээсээ «Teams-ээ үзүүлээч» гэж хүсээрэй.</p>
     </div>
   </div>
-  <p class="note">📐 <b>Математикийн даалгавар бага зэрэг их санагдаж магадгүй.</b> Энэ нь суурь мэдлэгийг нь бэхжүүлж, программчлал, мэргэжлийн хичээлд нь шууд хэрэг болно. Хүүхдээ тууштай байхад нь дэмжээрэй 🙏</p>
+  <p class="note"><b>Математикийн даалгавар бага зэрэг их санагдаж магадгүй.</b> Энэ нь суурь мэдлэгийг нь бэхжүүлж, программчлал, мэргэжлийн хичээлд нь шууд хэрэг болно. Хүүхдээ тууштай байхад нь дэмжээрэй.</p>
 
   <div class="sec" style="margin-top:30px">
     <h2>Түгээмэл асуулт</h2>
     <details class="q"><summary>Хүүхэд маань өвдвөл яаж чөлөө авах вэ?</summary><p>Өглөө 08:00-аас өмнө анги даасан багшид (9199-6648) утсаар эсвэл мессежээр мэдэгдээрэй. Хэд хоног өвдвөл эмчийн тодорхойлолт авчирна. Дэлгэрэнгүйг «Холбоо» хэсгийн «Чөлөө авах журам»-аас харна уу.</p></details>
     <details class="q"><summary>Хүүхэд маань хичээл тасалсан бол яах вэ?</summary><p>Багшид өглөө нь мэдэгдээрэй. Тухайн өдрийн материал Teams болон Математик X сайтад байгаа тул гэрээсээ нөхөж үзэж болно.</p></details>
     <details class="q"><summary>Хүүхдийнхээ дүнг хаанаас харах вэ?</summary><p>Хүүхдийн Teams-ийн «Grades (Дүн)» хэсэгт харагдана. Хүүхэдтэйгээ хамт нээж хараарай. Дэлгэрэнгүйг багшаас хувиар асууж болно.</p></details>
-    <details class="q"><summary>Математик хэцүү байна гэвэл яах вэ?</summary><p>Даваа гарагт 15:25–18:10 цагт математикийн давтлага ордог. Хүүхдээ оролцохыг уриалаарай. Математик X сайтын «Суурь» хэсэг өмнөх ангийн мэдлэгийг нь нөхөхөд тусална.</p></details>
+    <details class="q"><summary>Математик хэцүү байна гэвэл яах вэ?</summary><p>Даваа гарагт 15:25–18:10 цагт математикийн давтлага ордог. Хүүхдээ оролцохыг уриалаарай. Математик X сайтын «Сорил, давтлага» хэсгээс өмнөх ангийн мэдлэгээ давтаж болно.</p></details>
     <details class="q"><summary>Гэртээ компьютергүй бол яах вэ?</summary><p>Teams болон Математик X сайт гар утсан дээр ажилладаг. Шаардлагатай бол дадлагын газарт багшийн зөвшөөрлөөр ажиллаж болно.</p></details>
     <details class="q"><summary>Хурал хэзээ болох вэ?</summary><p>Хурлын товыг энэ хуудасны зарын самбар болон эцэг эхийн групп чатад урьдчилан мэдэгдэнэ.</p></details>
   </div>
@@ -434,19 +415,19 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--mut);fon
       <h3 style="font-size:19px;margin:0">Т.Пагамдулам</h3>
       <p class="muted" style="margin:2px 0 8px">Анги даасан багш · Математик, мэдээллийн технологийн багш</p>
       <p>Хүүхдийнхээ сурлага, ирц болон бусад асуудлаар <b>хувиар</b> холбогдоорой. Ажлын өдөр 08:00–18:00 цагийн хооронд хариулна.</p>
-      <p style="margin-top:8px;font-size:15px">📞 <a href="tel:91996648"><b>9199-6648</b></a> &nbsp;·&nbsp; ✉️ <a href="mailto:pagamdulamt@gmail.com">pagamdulamt@gmail.com</a></p>
+      <p style="margin-top:8px;font-size:15px"><a href="tel:91996648"><b>9199-6648</b></a> &nbsp;·&nbsp;<a href="mailto:pagamdulamt@gmail.com">pagamdulamt@gmail.com</a></p>
       <div class="btns">
-        <a class="btn" href="mailto:pagamdulamt@gmail.com">✉️ Имэйл</a>
-        <a class="btn alt" id="msgBtn" href="#">💬 Messenger</a>
-        <a class="btn alt" id="telBtn" href="#">📞 Залгах</a>
+        <a class="btn" href="mailto:pagamdulamt@gmail.com">Имэйл</a>
+        <a class="btn alt" id="msgBtn" href="#">Messenger</a>
+        <a class="btn alt" id="telBtn" href="#">Залгах</a>
       </div>
     </div>
   </div>
 
   <div class="sec grid g3">
-    <div class="card"><h3>📝 Чөлөө авах</h3><p>Хүүхэд өвдсөн эсвэл чөлөө авах шаардлагатай бол <b>өглөө 08:00-аас өмнө</b> багшид мэдэгдээрэй. <a href="#cholqo">Дэлгэрэнгүй журам →</a></p></div>
-    <div class="card"><h3>🤝 Ганцаарчлан уулзах</h3><p>Хүүхдийнхээ талаар биечлэн ярилцах бол урьдчилан утсаар цаг товлоорой. Уулзалтыг коллежийн I байрны 227 тоотод хийнэ.</p></div>
-    <div class="card"><h3>⏱️ Хариу өгөх хугацаа</h3><p>Мессежид <b>24 цагийн дотор</b> хариулна. Амралтын өдөр зөвхөн яаралтай асуудлаар холбогдоно уу.</p></div>
+    <div class="card"><h3>Чөлөө авах</h3><p>Хүүхэд өвдсөн эсвэл чөлөө авах шаардлагатай бол <b>өглөө 08:00-аас өмнө</b> багшид мэдэгдээрэй. <a href="#cholqo">Дэлгэрэнгүй журам</a></p></div>
+    <div class="card"><h3>Ганцаарчлан уулзах</h3><p>Хүүхдийнхээ талаар биечлэн ярилцах бол урьдчилан утсаар цаг товлоорой. Уулзалтыг коллежийн I байрны 227 тоотод хийнэ.</p></div>
+    <div class="card"><h3>Хариу өгөх хугацаа</h3><p>Мессежид <b>24 цагийн дотор</b> хариулна. Амралтын өдөр зөвхөн яаралтай асуудлаар холбогдоно уу.</p></div>
   </div>
 
   <div class="sec" id="cholqo">
@@ -459,7 +440,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--mut);fon
       <div class="step"><div><h3>Тасалсан хичээлээ нөхөх</h3><p>Чөлөөтэй байсан өдрийн хичээлийг <b>Teams</b> болон <b>Математик X</b> сайтаас үзэж, даалгавраа хугацаанд нь илгээнэ. Ойлгоогүй зүйлээ давтлагаар нөхнө.</p></div></div>
       <div class="step"><div><h3>Мэдэгдэлгүй тасалбал</h3><p>Хүүхэд мэдэгдэлгүй хичээлээ тасалбал багш тэр өдөртөө эцэг эх, асран хамгаалагчтай холбогдоно. Тасалсан цаг ирц, улирлын дүнд нөлөөлнө.</p></div></div>
     </div>
-    <p class="note">📘 Коллежийн ирц, чөлөөний албан ёсны журмыг <a href="https://online.fliphtml5.com/pagam5511/prrq/" target="_blank" rel="noopener">Суралцагчийн гарын авлага</a>-аас уншина уу. 💡 Тэтгэлэг авахын тулд хүүхэд 3 жилийн сургалтаа бүрэн дуусгах ёстой тул ирцээ сайн байлгах нь чухал.</p>
+    <p class="note">Коллежийн ирц, чөлөөний албан ёсны журмыг <a href="https://online.fliphtml5.com/pagam5511/prrq/" target="_blank" rel="noopener">Суралцагчийн гарын авлага</a>-аас уншина уу. Тэтгэлэг авахын тулд хүүхэд 3 жилийн сургалтаа бүрэн дуусгах ёстой тул ирцээ сайн байлгах нь чухал.</p>
   </div>
 
   <div class="sec">
@@ -467,10 +448,10 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--mut);fon
     <div class="card college">
       <div><b>Өвөрхангай аймаг дахь Политехник коллеж</b><span>Өвөрхангай аймаг, Арвайхээр сум, 5-р баг</span></div>
       <div class="cl">
-        <a href="tel:70322089">📞 7032-2089</a>
-        <a href="tel:70323454">📞 7032-3454</a>
-        <a href="mailto:uvurkhangai.college@gmail.com">✉️ uvurkhangai.college@gmail.com</a>
-        <a href="https://uvcollege.edu.mn/" target="_blank" rel="noopener">🌐 uvcollege.edu.mn</a>
+        <a href="tel:70322089">7032-2089</a>
+        <a href="tel:70323454">7032-3454</a>
+        <a href="mailto:uvurkhangai.college@gmail.com">uvurkhangai.college@gmail.com</a>
+        <a href="https://uvcollege.edu.mn/" target="_blank" rel="noopener">uvcollege.edu.mn</a>
       </div>
     </div>
     <p class="muted" style="margin-top:8px">Багштай холбогдож чадахгүй яаралтай тохиолдолд коллежийн утсаар холбогдоно уу.</p>
@@ -519,12 +500,12 @@ const EVENTS = [
 
 // Ангийн үүрэгт суралцагчид
 const ROLES = [
-  {ic:"👑", r:"Ангийг зохион байгуулах", name:"Шинэ-Од", help:"Занданбат", d:"Багшийн зар, сануулгыг цаг алдалгүй хүргэж, ангиа төлөөлж, бусад үүрэгт суралцагчдын ажлыг уялдуулна."},
-  {ic:"💛", r:"Сэтгэл зүй, эерэг уур амьсгал", name:"Занданбат", help:"", d:"Ангидаа халуун дулаан уур амьсгал бий болгож, найзуудаа эв найртай байлгаж, шинэ болон ганцаардсан найздаа тусална."},
-  {ic:"📚", r:"Сургалт ба ирц", name:"Даваадолгор", help:"Маргад-Эрдэнэ", d:"Хичээлийн ирцийг тэмдэглэж, даалгаврын хугацааг сануулж, «Хосоор суралцах баг»-ийг дэмжинэ."},
-  {ic:"💰", r:"Санхүү ба тооцоо", name:"Ойдовцэрэн", help:"Цэцэгмаа", d:"Ангийн арга хэмжээний хуримтлалыг хурааж, орлого, зарлагыг багш, ангийнхантайгаа зөвшилцөн ил тод тайлагнана."},
-  {ic:"🎭", r:"Соёл урлаг, спорт ба аялал", name:"Энхбаяр", help:"Тэргэл, Мөнхцэцэг", d:"Тэмцээн, үзлэгт ангиа бэлтгэж, аялал, баяр, чөлөөт цагийн арга хэмжээг санаачилж, зургийн цомог хөтөлнө."},
-  {ic:"🧹", r:"Ариун цэвэр, дадлагын газар", name:"Номин-Эрдэнэ", help:"Бадамцэрэн", d:"Жижүүрийн хуваарийг хянаж, дадлагын газрын аюулгүй, цэвэр байдлыг хангаж, ангиа агааржуулна."}
+  {r:"Ангийг зохион байгуулах", name:"Шинэ-Од", help:"Занданбат", d:"Багшийн зар, сануулгыг цаг алдалгүй хүргэж, ангиа төлөөлж, бусад үүрэгт суралцагчдын ажлыг уялдуулна."},
+  {r:"Сэтгэл зүй, эерэг уур амьсгал", name:"Занданбат", help:"", d:"Ангидаа халуун дулаан уур амьсгал бий болгож, найзуудаа эв найртай байлгаж, шинэ болон ганцаардсан найздаа тусална."},
+  {r:"Сургалт ба ирц", name:"Даваадолгор", help:"Маргад-Эрдэнэ", d:"Хичээлийн ирцийг тэмдэглэж, даалгаврын хугацааг сануулж, «Хосоор суралцах баг»-ийг дэмжинэ."},
+  {r:"Санхүү ба тооцоо", name:"Ойдовцэрэн", help:"Цэцэгмаа", d:"Ангийн арга хэмжээний хуримтлалыг хурааж, орлого, зарлагыг багш, ангийнхантайгаа зөвшилцөн ил тод тайлагнана."},
+  {r:"Соёл урлаг, спорт ба аялал", name:"Энхбаяр", help:"Тэргэл, Мөнхцэцэг", d:"Тэмцээн, үзлэгт ангиа бэлтгэж, аялал, баяр, чөлөөт цагийн арга хэмжээг санаачилж, зургийн цомог хөтөлнө."},
+  {r:"Ариун цэвэр, дадлагын газар", name:"Номин-Эрдэнэ", help:"Бадамцэрэн", d:"Жижүүрийн хуваарийг хянаж, дадлагын газрын аюулгүй, цэвэр байдлыг хангаж, ангиа агааржуулна."}
 ];
 /* ======================================== */
 
@@ -535,14 +516,14 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",
 const md=x=>`${x.getMonth()+1}/${String(x.getDate()).padStart(2,"0")}`;
 
 document.getElementById("annList").innerHTML=ANN.map(a=>{const x=P(a.d),n=Math.round((today-x)/864e5);
-  const tag=n===0?'<span class="pill">Өнөөдөр</span>':(n<0?'<span class="pill">Удахгүй</span>':'');
+  const tag=n===0?'<span class="pill">өнөөдөр</span>':(n<0?'<span class="pill">удахгүй</span>':'');
   return `<div class="ann ${a.type}"><div class="dt"><b>${x.getDate()}</b><small>${MON[x.getMonth()]}</small></div><div><h3>${esc(a.t)}${tag}</h3><p>${esc(a.b)}</p></div></div>`}).join("");
 
 const li=e=>{const x=P(e.d);return `<li class="${x<today?'past':''}"><b>${md(x)}</b><span>${esc(e.t)}</span></li>`};
 document.getElementById("upNext").innerHTML=EVENTS.filter(e=>P(e.d)>=today).slice(0,5).map(li).join("")||'<li>Удахгүй болох арга хэмжээ алга.</li>';
 document.getElementById("allEv").innerHTML=EVENTS.map(li).join("");
 
-document.getElementById("roleList").innerHTML=ROLES.map(x=>`<div class="card role"><div class="av">${x.ic}</div><div><div class="t">${esc(x.r)}</div><div class="nm">${x.name?esc(x.name):'Тодруулж байна'}</div>${x.help?`<div class="hp">Туслах: ${esc(x.help)}</div>`:''}<p>${esc(x.d)}</p></div></div>`).join("");
+document.getElementById("roleList").innerHTML=ROLES.map(x=>`<div class="card role"><div><div class="t">${esc(x.r)}</div><div class="nm">${x.name?esc(x.name):'Тодруулж байна'}</div>${x.help?`<div class="hp">Туслах: ${esc(x.help)}</div>`:''}<p>${esc(x.d)}</p></div></div>`).join("");
 
 const m=document.getElementById("msgBtn"),t=document.getElementById("telBtn");
 if(MESSENGER){m.href=MESSENGER;m.target="_blank"}else m.style.display="none";
